@@ -1,0 +1,40 @@
+.footer-wrapper {
+  border-top: 7px solid var(--accent-color);
+}
+.footer {
+  background: #eeedeb;
+  border-top: 3px solid black;
+}
+.footer .footer-links {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.footer a {
+  font-size: 0.75rem;
+  color: var(--default-color);
+  transition: color 0.2s ease-in-out;
+}
+
+.footer a:hover {
+  color: var(--accent-color);
+}
+.footer-item:last-child {
+  margin-right: 3em;
+}
+
+.footer .legal p {
+  font-size: 0.75rem;
+}
+.footer .rights p {
+  font-size: 0.8rem;
+}
+.settings .form-select {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.settings .form-select:active,
+.settings .form-select:focus {
+  box-shadow: none !important;
+}

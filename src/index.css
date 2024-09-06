@@ -1,0 +1,114 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  scroll-behavior: smooth;
+  --background-color: #f0f8ff;
+  --default-color: #333333;
+  --accent-color: #e87511;
+  --accent-color-hover: #ed7112;
+  --surface-color: #f9f9f9;
+  --background-color-deep: #f5f7f8;
+  --background-color-deep-hover: #f2f2f2;
+  --danger-color: #f5004f;
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "League Spartan", sans-serif;
+}
+
+.body {
+  font-family: var(--font-primary);
+  background: var(--background-color);
+  color: var(--default-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color-hover);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+.btn-primary,
+.bg-primary {
+  transition: all 0.3s ease-in;
+  background: var(--accent-color) !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  border: none !important;
+  background: var(--accent-color-hover) !important;
+  color: var(--surface-color) !important;
+}
+
+.btn-outline-primary {
+  background: transparent !important;
+  border: 1px solid var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  transition: all 0.3s ease-in;
+}
+
+.btn-outline-primary:hover {
+  background: var(--accent-color) !important;
+  color: var(--surface-color) !important;
+  border: none !important;
+}
+
+.text-primary {
+  color: var(--accent-color) !important;
+}
+.border-primary {
+  border-color: var(--accent-color) !important;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+.flex-r {
+  display: flex;
+  align-items: center;
+}
+
+.default-padding {
+  padding: 0 2em;
+}
+
+@media (min-width: 1400px) {
+  .default-padding {
+    padding: 0 8em;
+  }
+}

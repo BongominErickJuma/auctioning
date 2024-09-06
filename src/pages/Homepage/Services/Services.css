@@ -1,0 +1,11 @@
+.services .title {
+  font-weight: bolder;
+}
+
+.services .service-title {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  margin-top: -0.5em;
+  margin-bottom: 0;
+}

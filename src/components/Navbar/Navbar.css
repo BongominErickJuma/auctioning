@@ -1,0 +1,27 @@
+.navbar-links {
+  background: white;
+
+  z-index: 999;
+}
+.navbar-links .bi {
+  font-size: 0.75rem;
+}
+.navbar-links p {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.navbar-links .form-control {
+  box-shadow: none;
+}
+.navbar-links .form-control:focus,
+.navbar-links .form-control:active {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.navbar-links .navbar-item {
+  cursor: pointer;
+}
+
+.navbar-links .navbar-item:hover {
+  background: #eeedeb;
+}
