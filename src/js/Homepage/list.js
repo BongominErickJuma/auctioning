@@ -7,22 +7,16 @@ const ItemsList = [
     format: "live auction",
     bid: "Accepting bid",
     location: [
-      {
-        city: "Bolton",
-      },
-      {
-        city: "Caledon East",
-      },
-      {
-        city: "Thunder Bay",
-      },
+      { city: "Bolton" },
+      { city: "Caledon East" },
+      { city: "Thunder Bay" },
     ],
     found: ["onsite", "online"],
     stock: 355,
     images: [
-      "/images/graders/grader1.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader3.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader1.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
     ],
   },
   {
@@ -32,20 +26,13 @@ const ItemsList = [
     region: "QC",
     format: "timed auction",
     bid: "Accepting bid",
-    location: [
-      {
-        city: "Montreal",
-      },
-      {
-        city: "Quebec City",
-      },
-    ],
+    location: [{ city: "Montreal" }, { city: "Quebec City" }],
     found: ["onsite"],
     stock: 210,
     images: [
-      "/images/graders/grader4.jpg",
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader2.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
     ],
   },
   {
@@ -54,20 +41,13 @@ const ItemsList = [
     date: "Nov 12",
     region: "AB",
     format: "live auction",
-    location: [
-      {
-        city: "Calgary",
-      },
-      {
-        city: "Edmonton",
-      },
-    ],
+    location: [{ city: "Calgary" }, { city: "Edmonton" }],
     found: ["online"],
     stock: 150,
     images: [
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader4.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
     ],
   },
   {
@@ -77,20 +57,13 @@ const ItemsList = [
     region: "BC",
     format: "timed auction",
     bid: "Accepting bid",
-    location: [
-      {
-        city: "Vancouver",
-      },
-      {
-        city: "Victoria",
-      },
-    ],
+    location: [{ city: "Vancouver" }, { city: "Victoria" }],
     found: ["onsite", "online"],
     stock: 500,
     images: [
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader4.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
     ],
   },
   {
@@ -99,20 +72,13 @@ const ItemsList = [
     date: "Jan 20",
     region: "NS",
     format: "live auction",
-    location: [
-      {
-        city: "Halifax",
-      },
-      {
-        city: "Dartmouth",
-      },
-    ],
+    location: [{ city: "Halifax" }, { city: "Dartmouth" }],
     found: ["onsite"],
     stock: 320,
     images: [
-      "/images/graders/grader1.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader3.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader1.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
     ],
   },
   {
@@ -122,20 +88,13 @@ const ItemsList = [
     region: "MB",
     format: "timed auction",
     bid: "Accepting bid",
-    location: [
-      {
-        city: "Winnipeg",
-      },
-      {
-        city: "Brandon",
-      },
-    ],
+    location: [{ city: "Winnipeg" }, { city: "Brandon" }],
     found: ["onsite", "online"],
     stock: 280,
     images: [
-      "/images/graders/grader1.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader3.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader1.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
     ],
   },
   {
@@ -144,17 +103,13 @@ const ItemsList = [
     date: "Mar 25",
     region: "NL",
     format: "live auction",
-    location: [
-      {
-        city: "St. John's",
-      },
-    ],
+    location: [{ city: "St. John's" }],
     found: ["online"],
     stock: 100,
     images: [
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader4.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
     ],
   },
   {
@@ -163,20 +118,13 @@ const ItemsList = [
     date: "Apr 30",
     region: "SK",
     format: "timed auction",
-    location: [
-      {
-        city: "Saskatoon",
-      },
-      {
-        city: "Regina",
-      },
-    ],
+    location: [{ city: "Saskatoon" }, { city: "Regina" }],
     found: ["onsite"],
     stock: 250,
     images: [
-      "/images/graders/grader4.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader3.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
     ],
   },
   {
@@ -186,17 +134,13 @@ const ItemsList = [
     region: "PE",
     format: "live auction",
     bid: "Accepting bid",
-    location: [
-      {
-        city: "Charlottetown",
-      },
-    ],
+    location: [{ city: "Charlottetown" }],
     found: ["onsite", "online"],
     stock: 180,
     images: [
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader4.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader4.jpg`,
     ],
   },
   {
@@ -205,20 +149,13 @@ const ItemsList = [
     date: "Jun 18",
     region: "NB",
     format: "timed auction",
-    location: [
-      {
-        city: "Moncton",
-      },
-      {
-        city: "Saint John",
-      },
-    ],
+    location: [{ city: "Moncton" }, { city: "Saint John" }],
     found: ["onsite"],
     stock: 290,
     images: [
-      "/images/graders/grader2.jpg",
-      "/images/graders/grader3.jpg",
-      "/images/graders/grader1.jpg",
+      `${import.meta.env.BASE_URL}/images/graders/grader2.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader3.jpg`,
+      `${import.meta.env.BASE_URL}/images/graders/grader1.jpg`,
     ],
   },
 ];

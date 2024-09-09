@@ -25,3 +25,45 @@
 .navbar-links .navbar-item:hover {
   background: #eeedeb;
 }
+
+/* Keep the modal background white */
+
+.modal-backdrop {
+  display: none;
+}
+
+.modal-content {
+  height: 85vh;
+  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  top: 3rem;
+}
+
+.custom-width-modal .modal-dialog {
+  max-width: 95%;
+  width: auto;
+}
+
+.rItems,
+.lItems {
+  cursor: pointer;
+}
+
+.rItems span {
+  opacity: 0.5;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    height: 65vh;
+  }
+}
