@@ -1,0 +1,24 @@
+{
+  "data": [
+    { "name": "Available services" },
+    { "name": "Service options" },
+    { "name": "How to request services" },
+    { "name": "Service providers" },
+    { "name": "Service pricing" },
+    { "name": "Service agreements" },
+    { "name": "Customer service" },
+    { "name": "Service contracts" },
+    { "name": "Terms of service" },
+    { "name": "Professional services" },
+    { "name": "Quality of service" },
+    { "name": "Service reviews" },
+    { "name": "Service availability" },
+    { "name": "Service terms and conditions" },
+    { "name": "Scheduling services" },
+    { "name": "Service warranties" },
+    { "name": "Service packages" },
+    { "name": "How to choose a service" },
+    { "name": "24/7 services" },
+    { "name": "Online services" }
+  ]
+}
