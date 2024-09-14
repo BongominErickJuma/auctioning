@@ -9,7 +9,7 @@ const ListTypes = () => {
         <div className="row gy-3">
           {detail.map((det, idx) => (
             <div className="col-lg-4 " key={idx}>
-              <Link to={"/auctionSite/productDetail"}>
+              <Link to={"/auctioning/productDetail"}>
                 <div className="card">
                   <img src={det.image} alt="image" />
                   <div className="card-body text-start">

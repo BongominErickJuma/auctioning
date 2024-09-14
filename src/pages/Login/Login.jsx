@@ -30,7 +30,7 @@ const Login = () => {
               />
             </div>
             <Link
-              to={"/auctionSite/checkout"}
+              to={"/auctioning/checkout"}
               className="btn btn-primary w-100 mt-3"
             >
               Sign In
@@ -59,7 +59,7 @@ const Login = () => {
           </div>
           <hr />
           <p className="text-start">
-            Don't have an account? <Link to="/auctionSite/signup">Sign Up</Link>
+            Don't have an account? <Link to="/auctioning/signup">Sign Up</Link>
           </p>
         </div>
       </div>

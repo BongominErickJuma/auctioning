@@ -2,19 +2,19 @@ const navbar = [
   {
     title: "Browse by category",
     call: "categories",
-    url: "/auctionSite/bbc",
+    url: "/auctioning/bbc",
     chevron: "bi bi-chevron",
   },
   {
     title: "Auctions",
     call: "auctions",
-    url: "/auctionSite/auctions",
+    url: "/auctioning/auctions",
     chevron: "bi bi-chevron",
   },
   {
     title: "How it works",
     call: "how-it-works",
-    url: "/auctionSite/how-it-works",
+    url: "/auctioning/how-it-works",
     chevron: "bi bi-chevron",
   },
   {
@@ -26,12 +26,12 @@ const navbar = [
   {
     icon: "bi bi-wallet2",
     title: "Wallet",
-    url: "/auctionSite/checkout",
+    url: "/auctioning/checkout",
   },
   {
     icon: "bi bi-person-square",
     title: "My Profile",
-    url: "/auctionSite/profile",
+    url: "/auctioning/profile",
   },
 ];
 export default navbar;

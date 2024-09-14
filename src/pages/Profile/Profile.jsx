@@ -3,11 +3,11 @@ import "./Profile.css";
 
 const Profile = () => {
   const [formData, setFormData] = useState({
-    fullName: "Kevin Anderson",
+    fullName: "John Doe",
     about:
       "Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.",
     company: "Lueilwitz, Wisoky and Leuschke",
-    job: "Web Designer",
+    job: "Forex Trader",
     country: "USA",
     address: "A108 Adam Street, New York, NY 535022",
     phone: "(436) 486-3538 x29071",

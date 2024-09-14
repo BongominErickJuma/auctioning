@@ -48,7 +48,7 @@ const SignUp = () => {
               />
             </div>
             <Link
-              to={"/auctionSite/login"}
+              to={"/auctioning/login"}
               className="btn btn-primary w-100 mt-3"
             >
               Sign Up
@@ -74,7 +74,7 @@ const SignUp = () => {
           </div>
           <hr />
           <p className="text-start">
-            Have an account? <Link to="/auctionSite/login">Sign In</Link>
+            Have an account? <Link to="/auctioning/login">Sign In</Link>
           </p>
         </div>
       </div>

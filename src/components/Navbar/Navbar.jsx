@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <div className="navbar-links shadow default-padding py-4 w-100">
       <div className="topnav flex-r justify-content-between">
-        <Link to="/auctionSite">
+        <Link to="/auctioning">
           rb
           <span className="ms-2 text-black fw-bold">RITCHIE BROS.</span>
         </Link>
@@ -57,11 +57,11 @@ const Navbar = () => {
           </form>
         </div>
         <div className="buttons">
-          <Link to={"/auctionSite/login"} className="btn btn-sm btn-primary">
+          <Link to={"/auctioning/login"} className="btn btn-sm btn-primary">
             Sign in
           </Link>
           <Link
-            to={"/auctionSite/signup"}
+            to={"/auctioning/signup"}
             className="btn btn-sm btn-outline-primary ms-2"
           >
             Create an account
@@ -134,7 +134,7 @@ const Navbar = () => {
                           data-bs-dismiss="modal"
                         >
                           <NavLink
-                            to={"/auctionSite/details"}
+                            to={"/auctioning/details"}
                             className="rItems-inner p-2 rounded text-dark"
                           >
                             {rItems.name}

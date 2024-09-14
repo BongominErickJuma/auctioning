@@ -16,16 +16,16 @@ const App = () => {
       <Navbar />
       <div className="App default-padding mt-5">
         <Routes>
-          <Route exact path="/auctionSite" element={<Home />} />
-          <Route path="/auctionSite/details" element={<Details />} />
+          <Route exact path="/auctioning" element={<Home />} />
+          <Route path="/auctioning/details" element={<Details />} />
           <Route
-            path="/auctionSite/productDetail"
+            path="/auctioning/productDetail"
             element={<ProductDetails />}
           />
-          <Route path="/auctionSite/profile" element={<Profile />} />
-          <Route path="/auctionSite/checkout" element={<Checkout />} />
-          <Route path="/auctionSite/login" element={<Login />} />
-          <Route path="/auctionSite/signup" element={<SignUp />} />
+          <Route path="/auctioning/profile" element={<Profile />} />
+          <Route path="/auctioning/checkout" element={<Checkout />} />
+          <Route path="/auctioning/login" element={<Login />} />
+          <Route path="/auctioning/signup" element={<SignUp />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
       </div>
