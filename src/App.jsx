@@ -10,6 +10,7 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/Signup";
 import Profile from "./pages/Profile/Profile";
 import Checkout from "./pages/Checkout/Checkout";
+import Auctioning from "./pages/Auction/Auctioning";
 const App = () => {
   return (
     <Router>
@@ -24,6 +25,7 @@ const App = () => {
           />
           <Route path="/auctioning/profile" element={<Profile />} />
           <Route path="/auctioning/checkout" element={<Checkout />} />
+          <Route path="/auctioning/auction" element={<Auctioning />} />
           <Route path="/auctioning/login" element={<Login />} />
           <Route path="/auctioning/signup" element={<SignUp />} />
           <Route path="*" element={<h1>Page not found</h1>} />
