@@ -29,27 +29,30 @@ const Login = () => {
                 placeholder="Enter password"
               />
             </div>
-            <Link to={"/auctionSite"} className="btn btn-primary w-100 mt-3">
+            <Link
+              to={"/auctionSite/checkout"}
+              className="btn btn-primary w-100 mt-3"
+            >
               Sign In
             </Link>
           </form>
 
-          <div class="d-flex align-items-center justify-content-between mt-3">
-            <div class="form-check">
+          <div className="d-flex align-items-center justify-content-between mt-3">
+            <div className="form-check">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 name="remember"
                 value="true"
                 id="rememberMe"
               />
-              <label class="form-check-label" for="rememberMe">
+              <label className="form-check-label" for="rememberMe">
                 Remember me
               </label>
             </div>
 
-            <div class="form-check">
-              <a class="forgot-password text-end" href="#">
+            <div className="form-check">
+              <a className="forgot-password text-end" href="#">
                 forgot password
               </a>
             </div>

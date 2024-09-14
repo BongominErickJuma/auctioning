@@ -71,18 +71,20 @@ const Navbar = () => {
       <hr />
       <div className="flex-r">
         {navbar.map((item, idx) => (
-          <div
+          <Link
             key={idx}
-            className="mx-2 p-1 navbar-item rounded-2 text-center"
+            to={`${item.call ? "#" : item.url}`}
+            className="mx-2 p-1 navbar-item rounded-2 text-center text-dark"
             data-bs-toggle={item.call ? "modal" : ""}
             data-bs-target="#navModal"
             onClick={() => (item.call ? callItems(item.call) : "")}
           >
+            <i className={item.icon ? `${item.icon} mx-2 fs-6` : "mx-2"}></i>
             <span>{item.title}</span>
             <i
               className={item.chevron ? "bi bi-chevron-down mx-2" : "mx-2"}
             ></i>
-          </div>
+          </Link>
         ))}
       </div>
       <div

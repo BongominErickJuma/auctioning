@@ -2,34 +2,36 @@ const navbar = [
   {
     title: "Browse by category",
     call: "categories",
-    url: "/bbc",
+    url: "/auctionSite/bbc",
     chevron: "bi bi-chevron",
   },
   {
     title: "Auctions",
     call: "auctions",
-    url: "/auctions",
+    url: "/auctionSite/auctions",
     chevron: "bi bi-chevron",
   },
   {
     title: "How it works",
     call: "how-it-works",
-    url: "how-it-works",
+    url: "/auctionSite/how-it-works",
     chevron: "bi bi-chevron",
   },
   {
     title: "Services",
     call: "services",
-    url: "/services",
+    url: "#",
     chevron: "bi bi-chevron",
   },
   {
-    title: "Finances",
-    url: "/finances",
+    icon: "bi bi-wallet2",
+    title: "Wallet",
+    url: "/auctionSite/checkout",
   },
   {
-    title: "Locations",
-    url: "/locations",
+    icon: "bi bi-person-square",
+    title: "My Profile",
+    url: "/auctionSite/profile",
   },
 ];
 export default navbar;

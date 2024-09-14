@@ -55,16 +55,16 @@ const SignUp = () => {
             </Link>
           </form>
 
-          <div class="d-flex align-items-center justify-content-between mt-3">
-            <div class="form-check">
+          <div className="d-flex align-items-center justify-content-between mt-3">
+            <div className="form-check">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 name="remember"
                 value="true"
                 id="rememberMe"
               />
-              <label class="form-check-label" for="rememberMe">
+              <label className="form-check-label" for="rememberMe">
                 By Signing Up, You agree to
                 <Link to="#" className="ms-2">
                   terms and conditions

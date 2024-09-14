@@ -6,8 +6,10 @@ import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 import Details from "./pages/Details/Details";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import Login from "./Login/Login";
-import SignUp from "./js/Signup/Signup";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/Signup/Signup";
+import Profile from "./pages/Profile/Profile";
+import Checkout from "./pages/Checkout/Checkout";
 const App = () => {
   return (
     <Router>
@@ -20,6 +22,8 @@ const App = () => {
             path="/auctionSite/productDetail"
             element={<ProductDetails />}
           />
+          <Route path="/auctionSite/profile" element={<Profile />} />
+          <Route path="/auctionSite/checkout" element={<Checkout />} />
           <Route path="/auctionSite/login" element={<Login />} />
           <Route path="/auctionSite/signup" element={<SignUp />} />
           <Route path="*" element={<h1>Page not found</h1>} />
