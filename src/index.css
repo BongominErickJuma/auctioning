@@ -112,3 +112,9 @@ ul > li {
     padding: 0 8em;
   }
 }
+
+.form-control,
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}

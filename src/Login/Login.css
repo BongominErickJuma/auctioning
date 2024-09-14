@@ -1,0 +1,29 @@
+.login .img-container,
+.login {
+  width: 40%;
+}
+
+.login .form-control {
+  padding: 0.6em 0.5em;
+  color: #fcf8f3;
+  border: 1px solid #474343 !important;
+}
+
+.login .form-control::placeholder {
+  color: rgba(252, 248, 243, 0.3);
+}
+
+.login .form-control:focus,
+.login .form-control:active {
+  border: 1px solid var(--accent-color) !important;
+}
+
+.login input[type="checkbox"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 2px solid rgba(252, 248, 243, 0.3);
+}
+.login .form-check-label,
+.login .forgot-password {
+  font-family: var(--font-secondary);
+}

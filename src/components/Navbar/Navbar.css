@@ -33,9 +33,10 @@
 }
 
 .modal-content {
-  height: 85vh;
-  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
+  height: 500px;
+  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.15),
+    0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow-y: hidden;
 }
 
 .modal-dialog {
@@ -53,6 +54,16 @@
   cursor: pointer;
 }
 
+.lItems:hover {
+  background-color: rgba(232, 117, 17, 0.2);
+}
+.rItems-inner {
+  width: fit-content;
+  height: 100%;
+}
+.rItems-inner:hover {
+  background: rgb(238, 237, 235, 0.4);
+}
 .rItems span {
   opacity: 0.5;
 }
@@ -67,3 +78,32 @@
     height: 65vh;
   }
 }
+
+.left-row {
+  height: 350px;
+  overflow: scroll;
+}
+
+.right-row {
+  height: 480px;
+  overflow: auto;
+}
+.left-row::-webkit-scrollbar {
+  width: 0;
+}
+
+/* .custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: inherit;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: inherit;
+} */
