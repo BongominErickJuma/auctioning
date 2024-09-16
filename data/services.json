@@ -1,3 +1,8 @@
 {
-  "data": ["services"]
+  "data": [
+    {
+      "name": "services",
+      "call": "services"
+    }
+  ]
 }
