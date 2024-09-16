@@ -1,17 +1,22 @@
 import React, { useCallback, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import navbar from "../../js/Navbar/navbar";
+import NavbarModal from "./NavbarModal";
 
 const Navbar = () => {
   const [leftItems, setLeftItems] = useState([]);
   const [rightItems, setRightItems] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [rightTitle, setRightTitle] = useState("");
 
   const fetchLeftItems = useCallback(async (item) => {
     try {
       const res = await fetch(`${import.meta.env.BASE_URL}/data/${item}.json`);
       const data = await res.json();
-      setLeftItems(data.data);
+      const leftItems = data.data;
+      setRightTitle(leftItems[0].name);
+      setLeftItems(leftItems);
     } catch (err) {
       console.log(err);
     }
@@ -23,11 +28,23 @@ const Navbar = () => {
         `${import.meta.env.BASE_URL}/data/${itemLinks}.json`
       );
       const data = await res.json();
-      setRightItems(data.data);
+
+      const randomNum = Math.floor(Math.random() * 50) + 1;
+      const selectedItems = data.data.slice(0, randomNum);
+      setRightItems(selectedItems);
     } catch (err) {
       console.log(err);
     }
   }, []);
+
+  const handleFetchLink = (item) => {
+    fetchRightItems(item);
+  };
+
+  const handleActiveLinks = (index) => {
+    setActiveIndex(index);
+    setRightTitle(leftItems[index].name);
+  };
 
   const callItems = (item) => {
     fetchLeftItems(item);
@@ -87,82 +104,14 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div
-        className="modal fade custom-width-modal"
-        id="navModal"
-        // data-bs-backdrop="false"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content border-0">
-            <div className="modal-body">
-              <div className="container-fluid ">
-                <div className="row">
-                  <div className="col-lg-2 border-end">
-                    <div className="text-center">
-                      <i className="bi bi-chevron-up" />
-                    </div>
-                    <div className="left-row">
-                      <ul>
-                        {leftItems.map((lItems, idx) => (
-                          <li key={idx} className="m-2 p-2 lItems rounded">
-                            <div className="d-flex align-items-center justify-content-between">
-                              {lItems}
-                              <i className="bi bi-chevron-right fw-bold"></i>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="text-center">
-                      <i className="bi bi-chevron-down"></i>
-                    </div>
-                    <div className="mt-3">
-                      <a href="#" className="text-black text-center">
-                        All categories
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-lg-10">
-                    <div className="row right-row">
-                      {rightItems.map((rItems, idx) => (
-                        <div
-                          key={idx}
-                          className="col-lg-4 my-2 rItems"
-                          data-bs-dismiss="modal"
-                        >
-                          <NavLink
-                            to={"/auctioning/details"}
-                            className="rItems-inner p-2 rounded text-dark"
-                          >
-                            {rItems.name}
-
-                            {rItems.number ? (
-                              <span className="ms-1">({rItems.number})</span>
-                            ) : (
-                              ""
-                            )}
-                            {rItems.event ? (
-                              <p className="fw-light">
-                                {rItems.event[0].starts} -{" "}
-                                {rItems.event[0].ends}, {rItems.event[0].year}
-                              </p>
-                            ) : (
-                              ""
-                            )}
-                          </NavLink>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <NavbarModal
+        leftItems={leftItems}
+        rightItems={rightItems}
+        handleFetchLink={handleFetchLink}
+        handleActiveLinks={handleActiveLinks}
+        activeIndex={activeIndex}
+        ItemTitle={rightTitle}
+      />
     </div>
   );
 };
