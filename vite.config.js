@@ -5,4 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/auctioning",
   plugins: [react()],
+  envPrefix:'KCLIENT_',
+
 });
