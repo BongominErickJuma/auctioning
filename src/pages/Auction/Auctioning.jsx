@@ -201,12 +201,32 @@ const Auctioning = () => {
                     role="tabpanel"
                     aria-labelledby="home-tab"
                   >
-                    <div>
+                    <div className="d-flex align-items-center justify-content-between">
                       <small>High Bids</small>
-                      <button className="btn rounded-3 border">
-                        <i className="bi bi-heart me-2"></i> WatchList
+                      <button className="btn rounded-5 border shadow-sm">
+                        <i className="bi bi-heart me-2"></i> Watchlist
                       </button>
                     </div>
+                    <h1>
+                      $7,750 <sub>CAD</sub>
+                    </h1>
+                    <button className="btn btn-primary w-100">Place bid</button>
+                    <div className="text-center mt-2">
+                      <a href="#">Enter auction</a>
+                    </div>
+                    <p>
+                      <i className="bi bi-alarm me-2"></i>Closes: Today
+                      <strong> 15:32:00 pm</strong>
+                    </p>
+                    <p>
+                      <i className="bi bi-calendar-day me-2"></i>Timed Auction:
+                      Mont, QC, CAN
+                    </p>
+                    Nesciunt totam et. Consequuntur magnam aliquid eos nulla
+                    dolor iure eos quia. Accusantium distinctio omnis et atque
+                    fugiat. Itaque doloremque aliquid sint quasi quia distinctio
+                    similique. Voluptate nihil recusandae mollitia dolores. Ut
+                    laboriosam voluptatum dicta.
                   </div>
                   <div
                     className="tab-pane fade"
@@ -214,11 +234,63 @@ const Auctioning = () => {
                     role="tabpanel"
                     aria-labelledby="profile-tab"
                   >
-                    Nesciunt totam et. Consequuntur magnam aliquid eos nulla
-                    dolor iure eos quia. Accusantium distinctio omnis et atque
-                    fugiat. Itaque doloremque aliquid sint quasi quia distinctio
-                    similique. Voluptate nihil recusandae mollitia dolores. Ut
-                    laboriosam voluptatum dicta.
+                    <div className="bids">
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                    </div>
+                    <div
+                      className="d-flex align-items-center justify-content-between pt-5"
+                      style={{
+                        borderTop: "2px solid black",
+                      }}
+                    >
+                      <p>
+                        Bid Up to:
+                        <i className="bi bi-info bg-secondary p-1 text-white rounded-circle"></i>
+                      </p>
+                      <p>
+                        <i className="bi bi-alarm me-2"></i>Closes: Today
+                        <strong> 15:32:00 pm</strong>
+                      </p>
+                    </div>
+                    <div className="d-flex align-items-center justify-content-between">
+                      <button className="btn btn-secondary">-</button>
+                      <input type="text" />
+                      <button className="btn btn-secondary">+</button>
+                    </div>
+                    <button className="btn btn-primary w-100 mt-3">
+                      Place bids
+                    </button>
                   </div>
                 </div>
               </div>

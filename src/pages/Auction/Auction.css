@@ -4,3 +4,12 @@
 .selectedImage:hover {
   transform: scale(1.025);
 }
+
+.bids {
+  height: 200px;
+  overflow: auto;
+}
+
+.bids::-webkit-scrollbar {
+  width: 0;
+}
