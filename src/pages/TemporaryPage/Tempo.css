@@ -1,0 +1,117 @@
+.navbar-links {
+  background: white;
+
+  z-index: 999;
+}
+.navbar-links .bi {
+  font-size: 0.75rem;
+}
+.navbar-links p {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.navbar-links .form-control {
+  box-shadow: none;
+}
+.navbar-links .form-control:focus,
+.navbar-links .form-control:active {
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.navbar-links .navbar-item {
+  cursor: pointer;
+}
+
+.navbar-links .navbar-item:hover {
+  background: #eeedeb;
+}
+
+/* Keep the modal background white */
+
+.modal-backdrop {
+  display: none;
+}
+
+.modal-content {
+  height: 500px;
+  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.15),
+    0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow-y: hidden;
+}
+
+.modal-dialog {
+  position: relative;
+  top: 3rem;
+}
+
+.custom-width-modal .modal-dialog {
+  max-width: 95%;
+  width: auto;
+}
+
+.rItems,
+.lItems {
+  cursor: pointer;
+}
+
+.rItems {
+  transition: all 0.3s ease-in;
+  border-right: 2px solid inherit;
+  height: 30px;
+}
+
+.lItems.active {
+  border-right: 2px solid black;
+}
+
+.lItems.active .inner-link {
+  background-color: rgba(232, 117, 17, 0.2);
+}
+.lItems:hover {
+  border-right: 2px solid black;
+}
+.lItems:hover .inner-link {
+  background-color: rgba(232, 117, 17, 0.2);
+}
+.rItems-inner {
+  width: fit-content;
+  height: 100%;
+}
+.rItems-inner:hover {
+  background: rgb(238, 237, 235, 0.4);
+}
+.rItems span {
+  opacity: 0.5;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    height: 65vh;
+  }
+}
+
+.left-row {
+  height: 350px;
+  overflow: scroll;
+}
+
+.right-row {
+  height: 480px;
+  overflow: auto;
+}
+.left-row::-webkit-scrollbar {
+  width: 0;
+}
+
+.chevron {
+  cursor: pointer;
+}
+
+.chevron:hover {
+  font-weight: bolder;
+}
