@@ -1,12 +1,10 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Tempo.css";
-import navbar from "../../js/Navbar/navbar";
-import TempoModal from "./TempoModal";
 
 const Tempo = () => {
   const [leftItems, setLeftItems] = useState([]);
-  const [rightItems, setRightItems] = useState([]);
+  const [trightItems, settRightItems] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [rightTitle, setRightTitle] = useState("");
 
@@ -31,7 +29,7 @@ const Tempo = () => {
 
       const randomNum = Math.floor(Math.random() * 50) + 1;
       const selectedItems = data.data.slice(0, randomNum);
-      setRightItems(selectedItems);
+      settRightItems(selectedItems);
     } catch (err) {
       console.log(err);
     }
@@ -46,72 +44,57 @@ const Tempo = () => {
     setRightTitle(leftItems[index].name);
   };
 
-  const callItems = (item) => {
-    fetchLeftItems(item);
-    fetchRightItems(item);
-  };
+  useEffect(() => {
+    fetchLeftItems("categories");
+    fetchRightItems("categories");
+  }, []);
+
   return (
-    <div className="navbar-links shadow default-padding py-4 w-100">
-      <div className="topnav flex-r justify-content-between">
-        <Link to="/auctioning">
-          rb
-          <span className="ms-2 text-black fw-bold">RITCHIE BROS.</span>
-        </Link>
-        <div className="search-bar w-50">
-          <form className="row row-cols-lg-auto g-3 align-items-center w-100">
-            <div className="col-12 w-100">
-              <div className="input-group w-100">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inlineFormInputGroupUsername"
-                />
-                <div className="input-group-text">
-                  <i className="bi bi-list fs-6"></i>
-                </div>
+    <div className="row">
+      <div className="col-lg-3">
+        <ul>
+          {leftItems.map((lItems, idx) => (
+            <li
+              key={idx}
+              className={`my-2 px-2 lItems ${
+                activeIndex === idx ? "active" : ""
+              }`} // Conditionally add active class
+              onMouseOver={() => {
+                if (lItems.call) {
+                  handleFetchLink(lItems.call);
+                }
+                handleActiveLinks(idx); // Pass the index of the item to set it as active
+              }}
+            >
+              <div className="p-2 inner-link d-flex align-items-center justify-content-between rounded">
+                {lItems.name ? lItems.name : lItems}
+                <i className="bi bi-chevron-right fw-bold"></i>
               </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="col-lg-9">
+        <div className="row right-row">
+          <h2>{rightTitle}</h2>
+          {trightItems.map((rItems, idx) => (
+            <div key={idx} className="col-lg-4 my-2  rItems">
+              <Link
+                to={"/auctioning/details"}
+                className="rItems-inner p-2 rounded text-dark"
+              >
+                {rItems.name}
+
+                {rItems.number ? (
+                  <span className="ms-1">({rItems.number})</span>
+                ) : (
+                  ""
+                )}
+              </Link>
             </div>
-          </form>
-        </div>
-        <div className="buttons">
-          <Link to={"/auctioning/login"} className="btn btn-sm btn-primary">
-            Sign in
-          </Link>
-          <Link
-            to={"/auctioning/signup"}
-            className="btn btn-sm btn-outline-primary ms-2"
-          >
-            Create an account
-          </Link>
+          ))}
         </div>
       </div>
-      <hr />
-      <div className="flex-r">
-        {navbar.map((item, idx) => (
-          <Link
-            key={idx}
-            to={`${item.call ? "#" : item.url}`}
-            className="mx-2 p-1 navbar-item rounded-2 text-center text-dark"
-            data-bs-toggle={item.call ? "modal" : ""}
-            data-bs-target="#navModal"
-            onClick={() => (item.call ? callItems(item.call) : "")}
-          >
-            <i className={item.icon ? `${item.icon} mx-2 fs-6` : "mx-2"}></i>
-            <span>{item.title}</span>
-            <i
-              className={item.chevron ? "bi bi-chevron-down mx-2" : "mx-2"}
-            ></i>
-          </Link>
-        ))}
-      </div>
-      <TempoModal
-        leftItems={leftItems}
-        rightItems={rightItems}
-        handleFetchLink={handleFetchLink}
-        handleActiveLinks={handleActiveLinks}
-        activeIndex={activeIndex}
-        ItemTitle={rightTitle}
-      />
     </div>
   );
 };
