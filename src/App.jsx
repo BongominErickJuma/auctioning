@@ -11,6 +11,9 @@ import SignUp from "./pages/Signup/Signup";
 import Profile from "./pages/Profile/Profile";
 import Checkout from "./pages/Checkout/Checkout";
 import Auctioning from "./pages/Auction/Auctioning";
+import Bid  from "./pages/Bid/Bid";
+import Tempo from "./pages/TemporaryPage/Tempo"
+
 const App = () => {
   return (
     <Router>
@@ -25,7 +28,7 @@ const App = () => {
           />
           <Route path="/auctioning/profile" element={<Profile />} />
           <Route path="/auctioning/auction" element={<Auctioning />} />
-          <Route path="/auctioning/bids" element={<Bid />} />
+          <Route path="/auctioning/bids" element={<Bid/>} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
           <Route path="/auctioning/login" element={<Login />} />
           <Route path="/auctioning/signup" element={<SignUp />} />
