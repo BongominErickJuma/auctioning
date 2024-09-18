@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+# Slider Section
+--------------------------------------------------------------*/
+.slider {
+  background-color: transparent;
+}
+
+.slider .swiper-pagination .swiper-pagination-bullet {
+  background-color: color-mix(in srgb, var(--default-color) 90%, white 15%);
+}
+
+.slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.slider .swiper-wrapper {
+  height: auto !important;
+}
+
+.slider .swiper-slide {
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* 
+.slider .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+} */
+
+@media (max-width: 575px) {
+  .slider .swiper-slide {
+    min-height: 300px;
+  }
+}
+
+.slider .swiper-button-prev:after,
+.slider .swiper-button-next:after {
+  font-size: 24px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.slider .content {
+  padding: 60px 80px;
+  max-width: 700px;
+  position: relative;
+}
+
+.slider .content a,
+.slider .content h2,
+.slider .content p {
+  color: var(--default-color);
+}

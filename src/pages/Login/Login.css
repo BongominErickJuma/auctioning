@@ -5,12 +5,12 @@
 
 .login .form-control {
   padding: 0.6em 0.5em;
-  color: #fcf8f3;
+  color: black;
   border: 1px solid #474343 !important;
 }
 
 .login .form-control::placeholder {
-  color: rgba(252, 248, 243, 0.3);
+  color: black;
 }
 
 .login .form-control:focus,
@@ -21,7 +21,7 @@
 .login input[type="checkbox"] {
   border-radius: 0 !important;
   box-shadow: none !important;
-  border: 2px solid rgba(252, 248, 243, 0.3);
+  border: 2px solid black;
 }
 .login .form-check-label,
 .login .forgot-password {

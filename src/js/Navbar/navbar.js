@@ -29,6 +29,11 @@ const navbar = [
     url: "/auctioning/checkout",
   },
   {
+    icon: "bi bi-gear",
+    title: "TT",
+    url: "/auctioning/tempo",
+  },
+  {
     icon: "bi bi-person-square",
     title: "My Profile",
     url: "/auctioning/profile",
