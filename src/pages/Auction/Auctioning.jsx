@@ -1,31 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Auction.css";
 
 const Auctioning = () => {
   return (
     <main className="mb-3">
       {/* <ImageCarousel /> */}
-      <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+      <div className="p-4 p-md-5 rounded">
         <Link to={"/auctioning/productDetail"}>
-          <div className="col-md-6 px-0">
-            <h1 className="display-4 fst-italic">
-              Title of a longer featured blog post
-            </h1>
-            <p className="lead my-3">
-              Multiple lines of text that form the lede, informing new readers
-              quickly and efficiently about what’s most interesting in this
-              post’s contents.
-            </p>
-            <p className="lead mb-0">
-              <a href="#" className="text-white fw-bold">
-                Continue reading...
-              </a>
-            </p>
+          <div className="row gx-1">
+            <div className="col-lg-6">
+              <img
+                src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`}
+                alt="selectedImage"
+                className="d-block w-100 selectedImage"
+              />
+            </div>
+            <div className="col-lg-6">
+              <div className="row g-1">
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </Link>
       </div>
 
-      <div className="row g-5 mt-5">
+      <div className="row g-5">
         <div className="col-md-8">
           <h3 className="pb-4 mb-4 fst-italic border-bottom">
             From the Firehose
