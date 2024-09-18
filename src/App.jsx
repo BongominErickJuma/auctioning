@@ -12,9 +12,7 @@ import Profile from "./pages/Profile/Profile";
 import Checkout from "./pages/Checkout/Checkout";
 import Auctioning from "./pages/Auction/Auctioning";
 import Bid  from "./pages/Bid/Bid";
-import Tempo from "./pages/TemporaryPage/Tempo";
-import SubCategory from "./pages/Category/SubCategory"
-import ProtectedRoute from "./Contex/ProtectedRoute"
+import Tempo from "./pages/TemporaryPage/Tempo"
 
 const App = () => {
   return (
@@ -30,20 +28,16 @@ const App = () => {
           />
           <Route path="/auctioning/profile" element={<Profile />} />
           <Route path="/auctioning/auction" element={<Auctioning />} />
-          <Route path="/auctioning/bids" element={<Bid/>} />
+          <Route path="/auctioning/bids" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
           <Route path="/auctioning/login" element={<Login />} />
           <Route path="/auctioning/signup" element={<SignUp />} />
           <Route path="/auctioning/subcategory/:id" element={<SubCategory />} />
-          
+
           {/* protected routes */}
-          <Route element={<ProtectedRoute/>}>
-
-          <Route path="/auctioning/checkout" element={<Checkout />} />
-
+          <Route element={<ProtectedRoute />}>
+            <Route path="/auctioning/checkout" element={<Checkout />} />
           </Route>
-
-        
 
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
