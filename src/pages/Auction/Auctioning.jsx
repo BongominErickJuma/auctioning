@@ -1,46 +1,89 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Auction.css";
 
 const Auctioning = () => {
   return (
     <main className="mb-3">
       {/* <ImageCarousel /> */}
-      <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+      <div className="p-4 p-md-5 rounded">
         <Link to={"/auctioning/productDetail"}>
-          <div className="col-md-6 px-0">
-            <h1 className="display-4 fst-italic">
-              Title of a longer featured blog post
-            </h1>
-            <p className="lead my-3">
-              Multiple lines of text that form the lede, informing new readers
-              quickly and efficiently about what’s most interesting in this
-              post’s contents.
-            </p>
-            <p className="lead mb-0">
-              <a href="#" className="text-white fw-bold">
-                Continue reading...
-              </a>
-            </p>
+          <div className="row gx-1">
+            <div className="col-lg-6">
+              <img
+                src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`}
+                alt="selectedImage"
+                className="d-block w-100 selectedImage"
+              />
+            </div>
+            <div className="col-lg-6">
+              <div className="row g-1">
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <img
+                    src={`${
+                      import.meta.env.BASE_URL
+                    }/images/graders/grader1.jpg`}
+                    alt=""
+                    className="d-block w-100 selectedImage"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </Link>
       </div>
 
-      <div className="row g-5 mt-5">
+      <div className="row g-5">
         <div className="col-md-8">
-          <h3 className="pb-4 mb-4 fst-italic border-bottom">
-            From the Firehose
-          </h3>
-
           <article className="blog-post">
-            <h2 className="blog-post-title">Sample blog post</h2>
-            <p className="blog-post-meta">
-              January 1, 2021 by <a href="#">Mark</a>
-            </p>
-            <p>
-              This blog post shows a few different types of content that are
-              supported and styled with Bootstrap. Basic typography, lists,
-              tables, images, code, and more are all supported as expected.
-            </p>
+            <h2 className="blog-post-title">
+              2011 Sullair 900HAFDTQ-CA3 900 cfm Mobile Air Compressor
+            </h2>
+
+            <div className="flex-r">
+              <div className="border-end me-2 p-2">
+                <i className="bi bi-geo-alt"></i>
+                <p className="text-muted">Located</p>
+                <h5>Mont-Saint-Hilaire, QC, CAN</h5>
+              </div>
+              <div className="border-end me-2 p-2">
+                <i className="bi bi-alarm"></i>
+                <p className="text-muted">Meter</p>
+                <h5>11,074 hrs</h5>
+              </div>
+              <div className="border-end me-2 p-2">
+                <i className="bi bi-square"></i>
+                <p className="text-muted">Serial number</p>
+                <h5>201101080022</h5>
+              </div>
+            </div>
             <hr />
             <p>
               This is some additional paragraph placeholder content. It has been
@@ -110,43 +153,147 @@ const Auctioning = () => {
 
         <div className="col-md-4">
           <div className="position-sticky shadow" style={{ top: "2rem" }}>
-            <div className="p-4 mb-3 bg-light rounded">
-              <h4 className="fst-italic">About</h4>
-              <p className="mb-0">
-                Customize this section to tell your visitors a little bit about
-                your publication, writers, content, or something else entirely.
-              </p>
-            </div>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bordered Tabs Justified</h5>
 
-            <div className="p-4">
-              <h4 className="fst-italic">Archives</h4>
-              <ol className="list-unstyled mb-0">
-                <li>
-                  <a href="#">March 2021</a>
-                </li>
-                <li>
-                  <a href="#">February 2021</a>
-                </li>
-                <li>
-                  <a href="#">January 2021</a>
-                </li>
-                {/* Additional list items */}
-              </ol>
-            </div>
-
-            <div className="p-4">
-              <h4 className="fst-italic">Elsewhere</h4>
-              <ol className="list-unstyled">
-                <li>
-                  <a href="#">GitHub</a>
-                </li>
-                <li>
-                  <a href="#">Twitter</a>
-                </li>
-                <li>
-                  <a href="#">Facebook</a>
-                </li>
-              </ol>
+                <ul
+                  className="nav nav-tabs nav-tabs-bordered d-flex"
+                  id="borderedTabJustified"
+                  role="tablist"
+                >
+                  <li className="nav-item flex-fill" role="presentation">
+                    <button
+                      className="nav-link w-100 active"
+                      id="home-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#bordered-justified-home"
+                      type="button"
+                      role="tab"
+                      aria-controls="home"
+                      aria-selected="true"
+                    >
+                      Info Items
+                    </button>
+                  </li>
+                  <li className="nav-item flex-fill" role="presentation">
+                    <button
+                      className="nav-link w-100 "
+                      id="profile-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#bordered-justified-profile"
+                      type="button"
+                      role="tab"
+                      aria-controls="profile"
+                      aria-selected="false"
+                    >
+                      Bids (32 bids)
+                    </button>
+                  </li>
+                </ul>
+                <div
+                  className="tab-content pt-2"
+                  id="borderedTabJustifiedContent"
+                >
+                  <div
+                    className="tab-pane fade show active"
+                    id="bordered-justified-home"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                  >
+                    <div className="d-flex align-items-center justify-content-between">
+                      <small>High Bids</small>
+                      <button className="btn rounded-5 border shadow-sm">
+                        <i className="bi bi-heart me-2"></i> Watchlist
+                      </button>
+                    </div>
+                    <h1>
+                      $7,750 <sub>CAD</sub>
+                    </h1>
+                    <button className="btn btn-primary w-100">Place bid</button>
+                    <div className="text-center mt-2">
+                      <a href="#">Enter auction</a>
+                    </div>
+                    <p>
+                      <i className="bi bi-alarm me-2"></i>Closes: Today
+                      <strong> 15:32:00 pm</strong>
+                    </p>
+                    <p>
+                      <i className="bi bi-calendar-day me-2"></i>Timed Auction:
+                      Mont, QC, CAN
+                    </p>
+                    Nesciunt totam et. Consequuntur magnam aliquid eos nulla
+                    dolor iure eos quia. Accusantium distinctio omnis et atque
+                    fugiat. Itaque doloremque aliquid sint quasi quia distinctio
+                    similique. Voluptate nihil recusandae mollitia dolores. Ut
+                    laboriosam voluptatum dicta.
+                  </div>
+                  <div
+                    className="tab-pane fade"
+                    id="bordered-justified-profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                  >
+                    <div className="bids">
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                      <p>***89</p>
+                      <button className="btn btn-secondary rounded-5">
+                        $4,543
+                      </button>
+                    </div>
+                    <div
+                      className="d-flex align-items-center justify-content-between pt-5"
+                      style={{
+                        borderTop: "2px solid black",
+                      }}
+                    >
+                      <p>
+                        Bid Up to:
+                        <i className="bi bi-info bg-secondary p-1 text-white rounded-circle"></i>
+                      </p>
+                      <p>
+                        <i className="bi bi-alarm me-2"></i>Closes: Today
+                        <strong> 15:32:00 pm</strong>
+                      </p>
+                    </div>
+                    <div className="d-flex align-items-center justify-content-between">
+                      <button className="btn btn-secondary">-</button>
+                      <input type="text" />
+                      <button className="btn btn-secondary">+</button>
+                    </div>
+                    <button className="btn btn-primary w-100 mt-3">
+                      Place bids
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
