@@ -12,7 +12,9 @@ import Profile from "./pages/Profile/Profile";
 import Checkout from "./pages/Checkout/Checkout";
 import Auctioning from "./pages/Auction/Auctioning";
 import Bid  from "./pages/Bid/Bid";
-import Tempo from "./pages/TemporaryPage/Tempo"
+import Tempo from "./pages/TemporaryPage/Tempo";
+import SubCategory from "./pages/Category/SubCategory"
+import ProtectedRoute from "./Contex/ProtectedRoute"
 
 const App = () => {
   return (
