@@ -1,7 +1,29 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import "./Profile.css";
+import { AppContext } from "../../Contex/AppContext";
+
 
 const Profile = () => {
+  const { user, loading } = useContext(AppContext);
+
+  // Show spinner while loading
+  if (loading) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'  // Full screen height
+      }}>
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+      </div>
+
+    );
+  }
+  // alert(JSON.stringify(user))
+
   const [formData, setFormData] = useState({
     fullName: "John Doe",
     about:
@@ -9,9 +31,9 @@ const Profile = () => {
     company: "Lueilwitz, Wisoky and Leuschke",
     job: "Forex Trader",
     country: "USA",
-    address: "A108 Adam Street, New York, NY 535022",
-    phone: "(436) 486-3538 x29071",
-    email: "k.anderson@example.com",
+    address: user.location,
+    phone: user.phone,
+    email: user.email,
     twitter: "https://twitter.com/#",
     facebook: "https://facebook.com/#",
     instagram: "https://instagram.com/#",
@@ -38,6 +60,9 @@ const Profile = () => {
     // Handle form submission
     console.log("Form submitted", formData);
   };
+
+
+  
 
   return (
     <main id="main" className="main">
@@ -97,7 +122,7 @@ const Profile = () => {
                     </button>
                   </li>
 
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <button
                       className="nav-link"
                       data-bs-toggle="tab"
@@ -105,7 +130,7 @@ const Profile = () => {
                     >
                       Settings
                     </button>
-                  </li>
+                  </li> */}
 
                   <li className="nav-item">
                     <button
@@ -122,52 +147,58 @@ const Profile = () => {
                     className="tab-pane fade show active profile-overview"
                     id="profile-overview"
                   >
-                    <h5 className="card-title">About</h5>
-                    <p className="small fst-italic">{formData.about}</p>
+                    {/* <h5 className="card-title">About</h5>
+                    <p className="small fst-italic">{formData.about}</p> */}
+                     
+                     <br /> <br />
 
                     <h5 className="card-title">Profile Details</h5>
 
                     <div className="row">
                       <div className="col-lg-3 col-md-4 label">Full Name</div>
                       <div className="col-lg-9 col-md-8">
-                        {formData.fullName}
+                        {user.name}
                       </div>
                     </div>
 
+                  
                     <div className="row">
-                      <div className="col-lg-3 col-md-4 label">Company</div>
-                      <div className="col-lg-9 col-md-8">
-                        {formData.company}
-                      </div>
+                      <div className="col-lg-3 col-md-4 label">company name</div>
+                      <div className="col-lg-9 col-md-8">{user.organisation_name}</div>
                     </div>
 
                     <div className="row">
-                      <div className="col-lg-3 col-md-4 label">Job</div>
-                      <div className="col-lg-9 col-md-8">{formData.job}</div>
+                      <div className="col-lg-3 col-md-4 label">company email</div>
+                      <div className="col-lg-9 col-md-8">{user.organisation_email}</div>
                     </div>
 
                     <div className="row">
+                      <div className="col-lg-3 col-md-4 label">company Phone</div>
+                      <div className="col-lg-9 col-md-8">{user.organisation_phone}</div>
+                    </div>
+
+                    {/* <div className="row">
                       <div className="col-lg-3 col-md-4 label">Country</div>
                       <div className="col-lg-9 col-md-8">
                         {formData.country}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="row">
                       <div className="col-lg-3 col-md-4 label">Address</div>
                       <div className="col-lg-9 col-md-8">
-                        {formData.address}
+                        {user.location} {user.country}
                       </div>
                     </div>
 
                     <div className="row">
                       <div className="col-lg-3 col-md-4 label">Phone</div>
-                      <div className="col-lg-9 col-md-8">{formData.phone}</div>
+                      <div className="col-lg-9 col-md-8">{user.phone}</div>
                     </div>
 
                     <div className="row">
                       <div className="col-lg-3 col-md-4 label">Email</div>
-                      <div className="col-lg-9 col-md-8">{formData.email}</div>
+                      <div className="col-lg-9 col-md-8">{user.email}</div>
                     </div>
                   </div>
 
@@ -213,6 +244,24 @@ const Profile = () => {
                           htmlFor="fullName"
                           className="col-md-4 col-lg-3 col-form-label"
                         >
+                           Image
+                        </label>
+                        <div className="col-md-8 col-lg-9">
+                          <input
+                            name="fullName"
+                            type="file"
+                            className="form-control"
+                            id="fullName"
+                            value={formData.image}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="row mb-3">
+                        <label
+                          htmlFor="fullName"
+                          className="col-md-4 col-lg-3 col-form-label"
+                        >
                           Full Name
                         </label>
                         <div className="col-md-8 col-lg-9">
@@ -227,21 +276,24 @@ const Profile = () => {
                         </div>
                       </div>
 
+                    
+
                       <div className="row mb-3">
                         <label
-                          htmlFor="about"
+                          htmlFor="company"
                           className="col-md-4 col-lg-3 col-form-label"
                         >
-                          About
+                          Organisation Name
                         </label>
                         <div className="col-md-8 col-lg-9">
-                          <textarea
-                            name="about"
+                          <input
+                            name="company"
+                            type="text"
                             className="form-control"
-                            id="about"
-                            value={formData.about}
+                            id="company"
+                            value={user.organisation_name}
                             onChange={handleChange}
-                          ></textarea>
+                          />
                         </div>
                       </div>
 
@@ -250,7 +302,7 @@ const Profile = () => {
                           htmlFor="company"
                           className="col-md-4 col-lg-3 col-form-label"
                         >
-                          Company
+                          Organisation Phone
                         </label>
                         <div className="col-md-8 col-lg-9">
                           <input
@@ -258,7 +310,7 @@ const Profile = () => {
                             type="text"
                             className="form-control"
                             id="company"
-                            value={formData.company}
+                            value={user.organisation_phone}
                             onChange={handleChange}
                           />
                         </div>
@@ -266,22 +318,23 @@ const Profile = () => {
 
                       <div className="row mb-3">
                         <label
-                          htmlFor="job"
+                          htmlFor="company"
                           className="col-md-4 col-lg-3 col-form-label"
                         >
-                          Job
+                          Organisation Email
                         </label>
                         <div className="col-md-8 col-lg-9">
                           <input
-                            name="job"
+                            name="company"
                             type="text"
                             className="form-control"
-                            id="job"
-                            value={formData.job}
+                            id="company"
+                            value={user.organisation_email}
                             onChange={handleChange}
                           />
                         </div>
                       </div>
+
 
                       <div className="row mb-3">
                         <label
@@ -296,7 +349,7 @@ const Profile = () => {
                             type="text"
                             className="form-control"
                             id="country"
-                            value={formData.country}
+                            value={user.country}
                             onChange={handleChange}
                           />
                         </div>
@@ -315,7 +368,27 @@ const Profile = () => {
                             type="text"
                             className="form-control"
                             id="address"
-                            value={formData.address}
+                            value={user.location}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+
+
+                      <div className="row mb-3">
+                        <label
+                          htmlFor="address"
+                          className="col-md-4 col-lg-3 col-form-label"
+                        >
+                          Country
+                        </label>
+                        <div className="col-md-8 col-lg-9">
+                          <input
+                            name="address"
+                            type="text"
+                            className="form-control"
+                            id="address"
+                            value={user.country}
                             onChange={handleChange}
                           />
                         </div>
@@ -359,81 +432,7 @@ const Profile = () => {
                         </div>
                       </div>
 
-                      <div className="row mb-3">
-                        <label
-                          htmlFor="twitter"
-                          className="col-md-4 col-lg-3 col-form-label"
-                        >
-                          Twitter Profile
-                        </label>
-                        <div className="col-md-8 col-lg-9">
-                          <input
-                            name="twitter"
-                            type="text"
-                            className="form-control"
-                            id="twitter"
-                            value={formData.twitter}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="row mb-3">
-                        <label
-                          htmlFor="facebook"
-                          className="col-md-4 col-lg-3 col-form-label"
-                        >
-                          Facebook Profile
-                        </label>
-                        <div className="col-md-8 col-lg-9">
-                          <input
-                            name="facebook"
-                            type="text"
-                            className="form-control"
-                            id="facebook"
-                            value={formData.facebook}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="row mb-3">
-                        <label
-                          htmlFor="instagram"
-                          className="col-md-4 col-lg-3 col-form-label"
-                        >
-                          Instagram Profile
-                        </label>
-                        <div className="col-md-8 col-lg-9">
-                          <input
-                            name="instagram"
-                            type="text"
-                            className="form-control"
-                            id="instagram"
-                            value={formData.instagram}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="row mb-3">
-                        <label
-                          htmlFor="linkedin"
-                          className="col-md-4 col-lg-3 col-form-label"
-                        >
-                          Linkedin Profile
-                        </label>
-                        <div className="col-md-8 col-lg-9">
-                          <input
-                            name="linkedin"
-                            type="text"
-                            className="form-control"
-                            id="linkedin"
-                            value={formData.linkedin}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
+                     
 
                       <div className="text-center">
                         <button type="submit" className="btn btn-primary">
