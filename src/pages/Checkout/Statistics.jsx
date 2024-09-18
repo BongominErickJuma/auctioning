@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { AppContext } from "../../Contex/AppContext";
 import "./Statistics.css";
 
 const Statistics = () => {
+  const { user, loading } = useContext(AppContext);
+
+  // Show spinner while loading
+
+  if (loading) {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'  // Full screen height
+      }}>
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+      </div>
+
+    );
+  }
+
+// alert(JSON.stringify(user))
   return (
     <div className="row my-5">
       <div className="col-lg-4 ">
@@ -131,7 +154,7 @@ const Statistics = () => {
 
           <div className="card-body">
             <h5 className="card-title">
-              Customers <span>| This Year</span>
+              Last <span>Transaction</span>
             </h5>
 
             <div className="d-flex align-items-center">
@@ -139,7 +162,7 @@ const Statistics = () => {
                 <i className="bi bi-people"></i>
               </div>
               <div className="ps-3">
-                <h6>1244</h6>
+                <h6>Sh {user.last_transaction.toLocaleString('en-UG', { minimumFractionDigits: 0 })}</h6>
                 <span className="text-danger small pt-1 fw-bold">12%</span>
                 <span className="text-muted small pt-2 ps-1">decrease</span>
               </div>
@@ -157,9 +180,9 @@ const Statistics = () => {
                 <i className="bi bi-coin"></i>
               </div>
               <div className="ps-3">
-                <h6>$3,264,000</h6>
+              <h6>Sh {user.account_balance.toLocaleString('en-UG', { minimumFractionDigits: 0 })} </h6>
                 <span className="text-danger small pt-1 fw-bold">12%</span>
-                <span className="text-muted small pt-2 ps-1">decrease</span>
+                <span className="text-muted small pt-2 ps-1">increase</span>
               </div>
             </div>
           </div>
