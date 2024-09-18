@@ -12,6 +12,8 @@ import "@fontsource/league-spartan"; // Defaults to weight 400
 import "@fontsource/edu-vic-wa-nt-beginner"; // Defaults to weight 400
 import "@fontsource/montserrat"; // Defaults to weight 400
 
+import AppProvider from "./Contex/AppContext.jsx";
+
 // CSS styles
 import "./index.css";
 
@@ -22,7 +24,7 @@ import App from "./App.jsx";
 // Charts
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <AppProvider>
+  <App />
+</AppProvider>
 );
