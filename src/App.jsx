@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Homepage/Home/Home";
 import Footer from "./components/Footer/Footer";
@@ -13,8 +13,13 @@ import Checkout from "./pages/Checkout/Checkout";
 import Auctioning from "./pages/Auction/Auctioning";
 import Bid  from "./pages/Bid/Bid";
 import Tempo from "./pages/TemporaryPage/Tempo"
+import SubCategory from "./pages/Category/SubCategory";
+import ProtectedRoute from "./Contex/ProtectedRoute"
 
 const App = () => {
+
+
+
   return (
     <Router>
       <Navbar />
@@ -26,7 +31,6 @@ const App = () => {
             path="/auctioning/productDetail"
             element={<ProductDetails />}
           />
-          <Route path="/auctioning/profile" element={<Profile />} />
           <Route path="/auctioning/auction" element={<Auctioning />} />
           <Route path="/auctioning/bids" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
@@ -37,6 +41,9 @@ const App = () => {
           {/* protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/auctioning/checkout" element={<Checkout />} />
+            
+            <Route path="/auctioning/profile" element={<Profile />} />
+
           </Route>
 
           <Route path="*" element={<h1>Page not found</h1>} />
