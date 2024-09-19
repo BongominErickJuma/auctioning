@@ -5,7 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 import Details from "./pages/Details/Details";
-import ProductDetails from "./pages/ProductDetails/ProductDetails";
+
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Signup/Signup";
 import Profile from "./pages/Profile/Profile";
@@ -26,11 +26,8 @@ const App = () => {
         <Routes>
           <Route exact path="/auctioning" element={<Home />} />
           <Route path="/auctioning/details/:id" element={<Details />} />
-          <Route path="/auctioning/hello" element={<Product />} />
-          <Route
-            path="/auctioning/productDetail"
-            element={<ProductDetails />}
-          />
+          <Route path="/auctioning/productDetail" element={<Product />} />
+
           <Route path="/auctioning/auction" element={<Auctioning />} />
           <Route path="/auctioning/bids" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
