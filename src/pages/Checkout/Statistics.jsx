@@ -5,6 +5,7 @@ import "./Statistics.css";
 
 const Statistics = () => {
   const { user, loading } = useContext(AppContext);
+  
 
   // Show spinner while loading
 
@@ -162,7 +163,8 @@ const Statistics = () => {
                 <i className="bi bi-people"></i>
               </div>
               <div className="ps-3">
-                <h6>Sh {user.last_transaction.toLocaleString('en-UG', { minimumFractionDigits: 0 })}</h6>
+                {/* <h6>Sh {user.last_transaction.toLocaleString('en-UG', { minimumFractionDigits: 0 })}</h6> */}
+                <h6>{user?user.last_transaction:0}</h6>
                 <span className="text-danger small pt-1 fw-bold">12%</span>
                 <span className="text-muted small pt-2 ps-1">decrease</span>
               </div>
@@ -180,7 +182,9 @@ const Statistics = () => {
                 <i className="bi bi-coin"></i>
               </div>
               <div className="ps-3">
-              <h6>Sh {user.account_balance.toLocaleString('en-UG', { minimumFractionDigits: 0 })} </h6>
+              {/* <h6>Sh {user.account_balance.toLocaleString('en-UG', { minimumFractionDigits: 0 })} </h6> */}
+              <h6>{user?user.account_balance:0}</h6>
+
                 <span className="text-danger small pt-1 fw-bold">12%</span>
                 <span className="text-muted small pt-2 ps-1">increase</span>
               </div>
