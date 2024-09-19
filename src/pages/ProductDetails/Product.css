@@ -1,0 +1,15 @@
+.product-swiper {
+  height: 100vh;
+}
+.product-swiper img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.product-swiper .mySwiper2 {
+  height: 80%;
+}
+.product-swiper .mySwiper {
+  height: 20%;
+}

@@ -16,6 +16,7 @@ import Tempo from "./pages/TemporaryPage/Tempo";
 import SubCategory from "./pages/Category/SubCategory";
 import ProtectedRoute from "./Contex/ProtectedRoute";
 import AuctioningPage from "./pages/Auction/AuctioningPage";
+import Product from "./pages/ProductDetails/Products";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Routes>
           <Route exact path="/auctioning" element={<Home />} />
           <Route path="/auctioning/details/:id" element={<Details />} />
+          <Route path="/auctioning/hello" element={<Product />} />
           <Route
             path="/auctioning/productDetail"
             element={<ProductDetails />}
