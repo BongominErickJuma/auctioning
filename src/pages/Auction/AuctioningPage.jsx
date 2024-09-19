@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AuctioningPage = () => {
   const auctionItem = {
@@ -46,26 +47,26 @@ const AuctioningPage = () => {
             <span className="me-2">{auctionItem.name}</span>
             <span>${auctionItem.price}</span>
           </h2>
-
-          {/* Grid layout for columns */}
           <div className="row gx-3">
             {auctionItem.auctions.map((auction, index) => (
               <div key={index} className="col-md-3">
-                <div className="card info-card sales-card">
-                  <div className="card-body">
-                    <h5 className="card-title">{auction.location}</h5>
+                <Link to={"/auctioning/auction"}>
+                  <div className="card info-card sales-card">
+                    <div className="card-body">
+                      <h5 className="card-title">{auction.location}</h5>
 
-                    <div>
-                      <h6>{auction.price}</h6>
-                      <span className="text-success small pt-1 fw-bold">
-                        {auction.discount} off
-                      </span>
-                      <p className="text-muted small pt-2 ps-1">
-                        {auction.seller}
-                      </p>
+                      <div>
+                        <h6>{auction.price}</h6>
+                        <span className="text-success small pt-1 fw-bold">
+                          {auction.discount} off
+                        </span>
+                        <p className="text-muted small pt-2 ps-1">
+                          {auction.seller}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
