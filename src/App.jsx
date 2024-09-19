@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import { React, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Homepage/Home/Home";
 import Footer from "./components/Footer/Footer";
@@ -11,15 +11,13 @@ import SignUp from "./pages/Signup/Signup";
 import Profile from "./pages/Profile/Profile";
 import Checkout from "./pages/Checkout/Checkout";
 import Auctioning from "./pages/Auction/Auctioning";
-import Bid  from "./pages/Bid/Bid";
-import Tempo from "./pages/TemporaryPage/Tempo"
+import Bid from "./pages/Bid/Bid";
+import Tempo from "./pages/TemporaryPage/Tempo";
 import SubCategory from "./pages/Category/SubCategory";
-import ProtectedRoute from "./Contex/ProtectedRoute"
+import ProtectedRoute from "./Contex/ProtectedRoute";
+import AuctioningPage from "./pages/Auction/AuctioningPage";
 
 const App = () => {
-
-
-
   return (
     <Router>
       <Navbar />
@@ -34,6 +32,10 @@ const App = () => {
           <Route path="/auctioning/auction" element={<Auctioning />} />
           <Route path="/auctioning/bids" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
+          <Route
+            path="/auctioning/auctioning_page"
+            element={<AuctioningPage />}
+          />
           <Route path="/auctioning/login" element={<Login />} />
           <Route path="/auctioning/signup" element={<SignUp />} />
           <Route path="/auctioning/subcategory/:id" element={<SubCategory />} />
@@ -41,9 +43,8 @@ const App = () => {
           {/* protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/auctioning/checkout" element={<Checkout />} />
-            
-            <Route path="/auctioning/profile" element={<Profile />} />
 
+            <Route path="/auctioning/profile" element={<Profile />} />
           </Route>
 
           <Route path="*" element={<h1>Page not found</h1>} />

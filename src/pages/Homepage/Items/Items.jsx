@@ -1,19 +1,18 @@
 import React from "react";
 import ItemsList from "../../../js/Homepage/list";
 import "./Items.css";
-import useFetch from '../../../useFetch';
+import useFetch from "../../../useFetch";
 
 const Items = () => {
-
   const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
 
   const IMAGE_URL = import.meta.env.KCLIENT_IMAGE_URL;
 
-// alert(IMAGE_URL)
+  // alert(IMAGE_URL)
   const url = `${BASE_URL}/users/get-all/Auction`;
   const query = {
-    perPage: '50',
-    orderBy: 'desc',
+    perPage: "50",
+    orderBy: "desc",
   };
 
   const { data, isPending, error } = useFetch(url, query);
@@ -29,15 +28,20 @@ const Items = () => {
       </div>
       {error ? (
         <tr>
-          <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+          <div
+            className="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show"
+            role="alert"
+          >
             Check your internet
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button
+              type="button"
+              className="btn-close btn-close-white"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
           </div>
-
         </tr>
-      ) : data ?
-
-
+      ) : data ? (
         data.results.data.map((item, idx) => (
           <div className="card shadow-sm border-0 mt-3" key={idx}>
             <div className="row">
@@ -53,9 +57,7 @@ const Items = () => {
                     )}
                   </p>
                   <h3 className="my-0">{item.name}</h3>
-                  <p className="mb-0">
-                    Item's located in {item.location}
-                  </p>
+                  <p className="mb-0">Item's located in {item.location}</p>
                   <p className="fw-light mb-0">
                     Participate:
                     {/* {item.found.map((fd, idx) => ( */}
@@ -110,35 +112,27 @@ const Items = () => {
                     <button className="img-btn rounded-5">112 tractors</button>
                   </div>
 
-
                   <div className="col-lg-4 img-container">
                     <img src={`${IMAGE_URL}/${item.image2}`} alt={item.name} />
                     <button className="img-btn rounded-5">112 tractors</button>
                   </div>
 
-
                   <div className="col-lg-4 img-container">
                     <img src={`${IMAGE_URL}/${item.image3}`} alt={item.name} />
                     <button className="img-btn rounded-5">112 tractors</button>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         ))
-
-
-        : (
-
-          <div className=' justify-content-center align-items-center'>
-            <div class="spinner-border  " role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
+      ) : (
+        <div className=" justify-content-center align-items-center">
+          <div className="spinner-border  " role="status">
+            <span className="visually-hidden">Loading...</span>
           </div>
-
-
-        )}
+        </div>
+      )}
     </div>
   );
 };

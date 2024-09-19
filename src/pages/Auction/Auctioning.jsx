@@ -155,8 +155,6 @@ const Auctioning = () => {
           <div className="position-sticky shadow" style={{ top: "2rem" }}>
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">Bordered Tabs Justified</h5>
-
                 <ul
                   className="nav nav-tabs nav-tabs-bordered d-flex"
                   id="borderedTabJustified"
