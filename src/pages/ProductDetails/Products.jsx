@@ -17,7 +17,7 @@ const Product = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="product-swiper bg-danger">
+    <div className="product-swiper mb-5">
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",
@@ -31,37 +31,34 @@ const Product = () => {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-            className="main-image"
-          />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -75,34 +72,34 @@ const Product = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
       </Swiper>
     </div>
