@@ -1,49 +1,48 @@
-import React, { useContext, useState } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { AppContext } from "../../Contex/AppContext";
 import { Link } from "react-router-dom";
-import usePost from '../../usePost';
+import usePost from "../../usePost";
 
 const Login = () => {
-
-    const { token, setToken } = useContext(AppContext);
+  const { token, setToken } = useContext(AppContext);
 
   const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState(null);
-  const [login, setLogin] = useState('login');
+  const [login, setLogin] = useState("login");
   const navigate = useNavigate();
 
   // Using the custom hook for POST request
 
-  const { dataRes, isPostPending, err, postData } = usePost(`${BASE_URL}/loginUser `, true);
+  const { dataRes, isPostPending, err, postData } = usePost(
+    `${BASE_URL}/loginUser `,
+    true
+  );
 
   const handleSubmit = (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      // Create a FormData object
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('password', password);
-      postData(formData);
+    // Create a FormData object
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+    postData(formData);
   };
 
   // Navigate after successful submission
   if (dataRes && !isPostPending && !err) {
     // alert(dataRes)
-              localStorage.setItem("access_token", dataRes.access_token);
-              localStorage.setItem("loggedIn", true);
+    localStorage.setItem("access_token", dataRes.access_token);
+    localStorage.setItem("loggedIn", true);
 
-      // alert(JSON.stringify(dataRes.access_token))
-                setToken(dataRes.access_token);
-
+    // alert(JSON.stringify(dataRes.access_token))
+    setToken(dataRes.access_token);
 
     navigate(-1);
   }
-
-
 
   return (
     <div className="container-fluid">
@@ -75,21 +74,22 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-
-              {err &&
+              {err && (
                 <div className="alert alert-danger mt-2" role="alert">
                   Incorect username or password
                 </div>
-
-              }
-            </div>  <br /> 
-            <button className="btn btn-primary w-100" type="submit">{isPostPending ?
-
-              isPostPending &&
-              <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              : login}</button>
+              )}
+            </div>{" "}
+            <br />
+            <button className="btn btn-primary w-100" type="submit">
+              {isPostPending
+                ? isPostPending && (
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  )
+                : login}
+            </button>
           </form>
 
           <div className="d-flex align-items-center justify-content-between mt-3">
@@ -98,7 +98,6 @@ const Login = () => {
                 className="form-check-input"
                 type="checkbox"
                 name="remember"
-
                 id="rememberMe"
               />
               <label className="form-check-label" for="rememberMe">
