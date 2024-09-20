@@ -28,8 +28,8 @@ const App = () => {
           <Route path="/auctioning/details/:id" element={<Details />} />
           <Route path="/auctioning/productDetail" element={<Product />} />
 
-          <Route path="/auctioning/auction" element={<Auctioning />} />
-          <Route path="/auctioning/bids" element={<Bid />} />
+          <Route path="/auctioning/auction/:id" element={<Auctioning />} />
+          <Route path="/auctioning/bids/:id" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
           <Route
             path="/auctioning/auctioning_page"
