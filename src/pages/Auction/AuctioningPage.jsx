@@ -31,6 +31,19 @@ const AuctioningPage = () => {
         seller: "ArtCollector_KLA",
         discount: "30%",
       },
+
+      {
+        location: "Kampala",
+        price: "$19900",
+        seller: "ArtCollector_KLA",
+        discount: "30%",
+      },
+      {
+        location: "Kampala",
+        price: "$19900",
+        seller: "ArtCollector_KLA",
+        discount: "30%",
+      },
     ], // Multiple auction locations with their price and seller
   };
 
