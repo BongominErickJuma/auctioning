@@ -1,18 +1,63 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Auction.css";
+import { useNavigate, useParams } from "react-router-dom";
+import useFetch from "../../useFetch";
+
 
 const Auctioning = () => {
+
+  const { id } = useParams();
+
+  const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
+  const IMAGE_URL = import.meta.env.KCLIENT_IMAGE_URL;
+
+
+  const url = `${BASE_URL}/users/get/product/${id}`;
+
+  const query = {
+    perPage: '50',
+    orderBy: 'desc',
+    relationship: 'product_gallaries'
+  };
+
+  const { data, isPending, error } = useFetch(url, query);
+
+  alert(JSON.stringify(data))
+
+
   return (
     <main className="mb-3">
       {/* <ImageCarousel /> */}
-      <div className="p-4 p-md-5 rounded">
+
+      {error ? (
+        <div className="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+          Check your internet
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      ) :isPending?(
+        <div className="d-flex justify-content-center align-items-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      ): data && data.data && data.data.product ? (
+        <>
+         <div className="p-4 p-md-5 rounded">
         <Link to={"/auctioning/productDetail"}>
           <div className="row gx-1">
             <div className="col-lg-6">
               <img
-                src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`}
-                alt="selectedImage"
+                src={`${IMAGE_URL}/${data.data.product.image}`}
+                // src={`${import.meta.env.BASE_URL
+                // }/images/graders/grader1.jpg`}
+
+                alt={data.data.product.name}
                 className="d-block w-100 selectedImage"
               />
             </div>
@@ -20,36 +65,32 @@ const Auctioning = () => {
               <div className="row g-1">
                 <div className="col-lg-6">
                   <img
-                    src={`${
-                      import.meta.env.BASE_URL
-                    }/images/graders/grader1.jpg`}
+                    src={`${import.meta.env.BASE_URL
+                      }/images/graders/grader1.jpg`}
                     alt=""
                     className="d-block w-100 selectedImage"
                   />
                 </div>
                 <div className="col-lg-6">
                   <img
-                    src={`${
-                      import.meta.env.BASE_URL
-                    }/images/graders/grader1.jpg`}
+                    src={`${import.meta.env.BASE_URL
+                      }/images/graders/grader1.jpg`}
                     alt=""
                     className="d-block w-100 selectedImage"
                   />
                 </div>
                 <div className="col-lg-6">
                   <img
-                    src={`${
-                      import.meta.env.BASE_URL
-                    }/images/graders/grader1.jpg`}
+                    src={`${import.meta.env.BASE_URL
+                      }/images/graders/grader1.jpg`}
                     alt=""
                     className="d-block w-100 selectedImage"
                   />
                 </div>
                 <div className="col-lg-6">
                   <img
-                    src={`${
-                      import.meta.env.BASE_URL
-                    }/images/graders/grader1.jpg`}
+                    src={`${import.meta.env.BASE_URL
+                      }/images/graders/grader1.jpg`}
                     alt=""
                     className="d-block w-100 selectedImage"
                   />
@@ -59,6 +100,14 @@ const Auctioning = () => {
           </div>
         </Link>
       </div>
+
+        </>
+      ):(
+        <p>No data available.</p>
+
+      )}
+     
+
 
       <div className="row g-5">
         <div className="col-md-8">
