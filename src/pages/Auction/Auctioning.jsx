@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Auction.css";
-import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../../useFetch";
-
 
 const Auctioning = () => {
 
@@ -110,7 +107,7 @@ const Auctioning = () => {
 
 
       <div className="row g-5">
-        <div className="col-md-8">
+        <div className="col-md-7">
           <article className="blog-post">
             <h2 className="blog-post-title">
               2011 Sullair 900HAFDTQ-CA3 900 cfm Mobile Air Compressor
@@ -133,71 +130,149 @@ const Auctioning = () => {
                 <h5>201101080022</h5>
               </div>
             </div>
-            <hr />
-            <p>
-              This is some additional paragraph placeholder content. It has been
-              written to fill the available space and show how a longer snippet
-              of text affects the surrounding content.
-            </p>
-            <h2>Blockquotes</h2>
-            <p>This is an example blockquote in action:</p>
-            <blockquote className="blockquote">
-              <p>Quoted text goes here.</p>
-            </blockquote>
-            <p>
-              This is some additional paragraph placeholder content. It has been
-              written to fill the available space and show how a longer snippet
-              of text affects the surrounding content.
-            </p>
-            <h3>Example lists</h3>
-            <ul>
-              <li>First list item</li>
-              <li>Second list item with a longer description</li>
-              <li>Third list item to close it out</li>
-            </ul>
-            <ol>
-              <li>First list item</li>
-              <li>Second list item with a longer description</li>
-              <li>Third list item to close it out</li>
-            </ol>
-            <dl>
-              <dt>HyperText Markup Language (HTML)</dt>
-              <dd>
-                The language used to describe and define the content of a Web
-                page
-              </dd>
-              <dt>Cascading Style Sheets (CSS)</dt>
-              <dd>Used to describe the appearance of Web content</dd>
-              <dt>JavaScript (JS)</dt>
-              <dd>
-                The programming language used to build advanced Web sites and
-                applications
-              </dd>
-            </dl>
-            <h2>Inline HTML elements</h2>
-            <p>
-              HTML defines a long list of available inline tags, a complete list
-              of which can be found on the{" "}
-              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">
-                Mozilla Developer Network
-              </a>
-              .
-            </p>
-          </article>
+            <div>
+              <hr />
+              <div className="flex-r">
+                <h4 className="me-5">Features</h4>
+                <div className="ms-5">
+                  7 bar Working Pressure, Kubota 4 Cylinder 33 kW 1.5 L Diesel
+                  Engine, S/A Trailer, Lunette Ring
+                </div>
+              </div>
+              <hr />
+              <div className="flex-r">
+                <h4 className="me-5">Notes</h4>
+                <div className="ms-5">
+                  <h3 className="fw-light">LOCATED-IN-TRURO-NS</h3>
+                </div>
+              </div>
+              <hr />
+            </div>
+            <div>
+              <p
+                style={{
+                  fontSize: "2rem",
+                  marginBottom: "1rem",
+                  marginTop: "1rem",
+                }}
+              >
+                2018 Atlas Copco XAS88 185 cfm Mobile Air Compressor
+              </p>
+            </div>
+            {/* table component */}
+            <div>
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>In Yard</strong>
+                    </td>
+                    <td>yes</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Year</strong>
+                    </td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Manufacturer</strong>
+                    </td>
+                    <td>Lorem, ipsum dolor.</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Modal</strong>
+                    </td>
+                    <td>Lorem, ipsum dolor.</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Asset Type</strong>
+                    </td>
+                    <td>Lorem, ipsum dolor.</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>VIN</strong>
+                    </td>
+                    <td>Lorem, ipsum dolor.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {/* image Component */}
+            <ImageComponent
+              title="General appearance"
+              images={"5"}
+              description="The Detailed Equipment Information is limited in scope, and
+                Ritchie Bros. Auctioneers has not inspected any aspects or
+                components of the equipment other than those expressly set forth"
+            />
 
-          <nav className="blog-pagination" aria-label="Pagination">
-            <a className="btn btn-outline-primary" href="#">
-              Older
-            </a>
-            <a
-              className="btn btn-outline-secondary disabled"
-              href="#"
-              tabIndex="-1"
-              aria-disabled="true"
-            >
-              Newer
-            </a>
-          </nav>
+            {/* table component */}
+            <TableComponent />
+            <ImageComponent
+              title="Control station"
+              images={"5"}
+              description="The Detailed Equipment Information is limited in scope, and
+                Ritchie Bros. Auctioneers has not inspected any aspects or
+                components of the equipment other than those expressly set forth"
+            />
+            <ImageComponent
+              title="Engine"
+              images={"5"}
+              description="The Detailed Equipment Information is limited in scope, and
+                Ritchie Bros. Auctioneers has not inspected any aspects or
+                components of the equipment other than those expressly set forth"
+            />
+            <ImageComponent
+              title="Trailer chassis"
+              images={"6"}
+              description="The Detailed Equipment Information is limited in scope, and
+                Ritchie Bros. Auctioneers has not inspected any aspects or
+                components of the equipment other than those expressly set forth"
+            />
+
+            <div>
+              <h4 className="text-muted">General</h4>
+              <p>
+                The Detailed Equipment Information is limited in scope, and
+                Ritchie Bros. Auctioneers has not inspected any aspects or
+                components of the equipment other than those expressly set forth
+                herein. Unless expressly stated, we make no representations or
+                warranties, express or implied, concerning the equipment or its
+                components, including without limitation any representations or
+                warranties concerning functionality, conformity or compliance
+                with any safety standard or requirement of any applicable
+                authority or regulatory body, fitness for any particular
+                purpose, or merchantability. You are strongly advised to perform
+                your own detailed inspection of the equipment prior to bidding.
+              </p>
+              <h4 className="text-muted">Function</h4>
+              <p>
+                Equipment is not tested under load or operated in all available
+                gears. We make no representation or warranty that equipment is
+                operating in accordance with manufacturers' specifications. No
+                inspection has been performed with respect to any functionality
+                aspect other than those expressly included herein. Only select
+                photos have been provided for individual undercarriage
+                components, and may not be indicative of the condition of the
+                entire undercarriage as a whole.
+              </p>
+              <h4 className="text-muted">Dimensions</h4>
+              <p>
+                Measurements are given as an estimate only. Actual loaded
+                dimensions may vary based on truck/trailer height and the loaded
+                machine configuration/position. It is the buyer's responsibility
+                to measure all loads before leaving our auction site to ensure
+                the load is safe for transport. All measurements should be
+                verified by the buyer. DO NOT rely on these measurements for
+                transportation purposes.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div className="col-md-4">
@@ -337,6 +412,154 @@ const Auctioning = () => {
                     </div>
                     <button className="btn btn-primary w-100 mt-3">
                       Place bids
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="row g-5 mt-5 p-3"
+        style={{
+          background: "#eeedeb",
+        }}
+      >
+        <div className="col-lg-7">
+          <h3>Payment & fees</h3>
+          <div>
+            <ul
+              style={{
+                listStyle: "disc",
+              }}
+            >
+              <li className="m-2">
+                This item is subject to <strong>local sales tax</strong>.
+              </li>
+              <li className="m-2">
+                Buyers cannot remove their purchases from the auction site until
+                their invoice is paid in full.
+              </li>
+              <li className="m-2">
+                If Ritchie Bros. can't deliver clear title on a purchase, the
+                buyer is entitled to a full refund of the purchase price.
+              </li>
+              <li className="m-2">
+                Buyers are required to pay certain transaction and documentation
+                fees. Please read this information before you bid.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="col-lg-4 ">
+          <div className="card h-100">
+            <div className="card-body row">
+              <div className="col-lg-7">
+                <h4>Buying a Machine and needs financing?</h4>
+                <button className="btn btn-sm btn-primary">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="row g-5 mt-5 p-3"
+        style={{
+          background: "#eeedeb",
+        }}
+      >
+        <div className="col-lg-7">
+          <h3>Get shipping estimates</h3>
+          <div>
+            We've partnered with trusted shipping vendors to make it easy for
+            you to find the best transporters at the lowest prices. Request free
+            quotes or get instant shipping estimates from our vendor’s websites.
+          </div>
+
+          <h3>Coming to pick it up?</h3>
+          <div>
+            Drivers must bring a copy of the Ritchie Bros. Auctioneers release
+            ticket to pick up the item.
+          </div>
+
+          <button className="btn btn-primary mt-5">Learn More</button>
+        </div>
+
+        <div className="col-md-4">
+          <div>
+            <div className="card">
+              <div className="card-body">
+                <ul
+                  className="nav nav-tabs nav-tabs-bordered d-flex"
+                  id="TabJustified"
+                  role="tablist"
+                >
+                  <li className="nav-item flex-fill" role="presentation">
+                    <button
+                      className="nav-link w-100 active"
+                      id="hometab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#justified-home"
+                      type="button"
+                      role="tab"
+                      aria-controls="home"
+                      aria-selected="true"
+                    >
+                      Veritread
+                    </button>
+                  </li>
+                  <li className="nav-item flex-fill" role="presentation">
+                    <button
+                      className="nav-link w-100 "
+                      id="profiletab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#justified-profile"
+                      type="button"
+                      role="tab"
+                      aria-controls="profile"
+                      aria-selected="false"
+                    >
+                      uSip
+                    </button>
+                  </li>
+                </ul>
+                <div className="tab-content pt-2" id="TabJustifiedContent">
+                  <div
+                    className="tab-pane fade show active"
+                    id="justified-home"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                  >
+                    <p>Shipping estimator</p>
+                    <small>learn more</small>
+                    <hr />
+                    <p>
+                      Submit your item to VeriTread and receive free,
+                      no-obligation freight quotes.
+                    </p>
+                    <button className="btn btn-sm btn-primary">
+                      Get shipping bids
+                    </button>
+                  </div>
+                  <div
+                    className="tab-pane fade"
+                    id="justified-profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                  >
+                    <p>Shipping estimator</p>
+                    <small>learn more</small>
+                    <hr />
+                    <p>
+                      Get free, no-obligation freight quotes on shipping. This
+                      item is eligible to be shipped via uShip, which is
+                      recommended for less-than-truckload (LTL) lots
+                    </p>
+                    <button className="btn btn-sm btn-primary">
+                      Get shipping bids
                     </button>
                   </div>
                 </div>

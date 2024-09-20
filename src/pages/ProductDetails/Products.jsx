@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,7 +7,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-
 import "./Product.css";
 
 // import required modules
@@ -42,24 +41,6 @@ const Product = () => {
         <SwiperSlide>
           <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
-        </SwiperSlide>
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -82,24 +63,6 @@ const Product = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader3.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader1.jpg`} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={`${import.meta.env.BASE_URL}/images/graders/grader2.jpg`} />
         </SwiperSlide>
       </Swiper>
     </div>
