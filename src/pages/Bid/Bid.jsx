@@ -4,11 +4,14 @@ import AuctionType from "./AuctionType";
 import TA from "./TimedAuction/TA";
 import React, { useCallback, useEffect, useState } from "react";
 import useFetch from "../../useFetch"
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const Bid = () => {
+  const { id } = useParams();
+
   const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
-  const url = `${BASE_URL}/users/AuctionTypes/1`;
+  const url = `${BASE_URL}/users/AuctionTypes/${id}`;
 
   const query = {
     perPage: '50',
