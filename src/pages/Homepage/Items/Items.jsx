@@ -2,6 +2,7 @@ import React from "react";
 import ItemsList from "../../../js/Homepage/list";
 import "./Items.css";
 import useFetch from "../../../useFetch";
+import { Link } from "react-router-dom";
 
 const Items = () => {
   const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
@@ -9,7 +10,7 @@ const Items = () => {
   const IMAGE_URL = import.meta.env.KCLIENT_IMAGE_URL;
 
   // alert(IMAGE_URL)
-  const url = `${BASE_URL}/users/get-all/Auction`;
+  const url = `${BASE_URL}/users/get-all/auction`;
   const query = {
     perPage: "50",
     orderBy: "desc",
@@ -87,13 +88,15 @@ const Items = () => {
                   <button className="btn btn-sm btn-primary">
                     Register to bid online
                   </button>
-                  {item.bid ? (
-                    <button className="btn btn-sm btn-outline-primary mx-2">
+
+                  <Link to={`/auctioning/bids/${item.id}`}  className="btn btn-sm btn-outline-primary mx-2">
                       Enter auction
-                    </button>
+                    </Link>
+                  {/* {item.bid ? (
+                    
                   ) : (
                     <span className="mx-2"></span>
-                  )}
+                  )} */}
 
                   <a href="#">see all 345 items</a>
                 </div>
