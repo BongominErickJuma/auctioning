@@ -26,13 +26,14 @@ const App = () => {
         <Routes>
           <Route exact path="/auctioning" element={<Home />} />
           <Route path="/auctioning/details/:id" element={<Details />} />
-          <Route path="/auctioning/productDetail" element={<Product />} />
+          // to the 
+          <Route path="/auctioning/productDetail/:id" element={<Product />} />
 
           <Route path="/auctioning/auction/:id" element={<Auctioning />} />
           <Route path="/auctioning/bids/:id" element={<Bid />} />
           <Route path="/auctioning/tempo" element={<Tempo />} />
           <Route
-            path="/auctioning/auctioning_page"
+            path="/auctioning/auctioning_page/:id"
             element={<AuctioningPage />}
           />
           <Route path="/auctioning/login" element={<Login />} />
