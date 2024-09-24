@@ -1,14 +1,18 @@
 import React, { useState,useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import useWebSocket from "react-use-websocket";
 import { AppContext } from "../../Contex/AppContext";
 
-
+import { Link, useNavigate, useParams } from "react-router-dom";
+import useFetch from "../../useFetch";
 
 
 
 
 const AuctioningPage = () => {
+
+
+  
   const { user, loading } = useContext(AppContext); // Get user from context
 
   // Check if the user data is still loading
@@ -22,11 +26,33 @@ const AuctioningPage = () => {
     );
   }
 
+
+
+  const { id } = useParams();
+
+  const BASE_URL = import.meta.env.KCLIENT_BASE_URL;
+  const IMAGE_URL = import.meta.env.KCLIENT_IMAGE_URL;
+
+
+  const url = `${BASE_URL}/users/get/product/1`;
+
+  const query = {
+    perPage: '50',
+    orderBy: 'desc',
+  };
+
+  const { data, isPending, error } = useFetch(url, query);
+
+
   // Assuming that the user object has a `name` property
   const  username = user.name;
+  const  user_id = user.id;
+  const  product_id = 1;
+
+
 
   // Define WebSocket URL and pass username as query param
-  const WS_URL = `ws://127.0.0.1:3000?username=${encodeURIComponent(username)}`;
+  const WS_URL = `ws://127.0.0.1:4000?username=${encodeURIComponent(username)}`;
 
   // Establish WebSocket connection
   const { sendJsonMessage, lastJsonMessage } = useWebSocket(WS_URL, {
@@ -65,6 +91,8 @@ const AuctioningPage = () => {
     } else {
       const priceUpdate = {
         username,
+        product_id,
+        user_id,
         price: enteredPrice,
       };
       sendJsonMessage(priceUpdate);
@@ -72,17 +100,51 @@ const AuctioningPage = () => {
     }
   };
 
+
+ 
   return (
+    <>
+   
+
+
+
+
     <div className="container my-4">
-      <h1>Welcome, {username}</h1>
-      <p>WebSocket connection is live.</p>
+    {error ? (
+        <div className="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+          Check your internet {error}
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      ) : isPending ? (
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) :data&& data.data && data.data.product ?(
+        <div className="card border-0">
+        <img
+          src={`${IMAGE_URL}/${data.data.product.image}`}
+          className="card-img-top mx-auto mt-3"
+          alt="Auction Item"
+        />
+        <div className="card-body text-center p-0">
+          <h2 className="my-3">
+            <span className="me-2">{data.data.product.name}</span>
+          </h2>
+          <div className="flex-r  justify-content-between">
 
-      {/* Display current highest bid */}
-      <h3>Current highest bid: ${currentHighestPrice}</h3>
+          <h1>Welcome, {username} </h1>
 
-      {/* Input field for price */}
-      <div className="mb-3">
-        <label htmlFor="priceInput" className="form-label">Enter your bid price:</label>
+<h3>Current highest bid: ${currentHighestPrice}</h3>
+         
+<div className="mb-3">
+Enter your bid price        
         <input
           type="number"
           className="form-control"
@@ -92,30 +154,49 @@ const AuctioningPage = () => {
         />
       </div>
 
-      {/* Button to send the price update */}
+      {/* Button to send the price update */} 
       <button className="btn btn-primary" onClick={sendPriceUpdate}>
         Submit Bid
       </button>
+          </div>
+         
 
-      {/* Display error message if bid is too low */}
-      {errorMessage && <div className="alert alert-danger mt-3">{errorMessage}</div>}
+          <div className="row g-3">
 
-      {/* Display the users' data received from the WebSocket server */}
-      <div className="mt-4">
-        <h3>Live Auction Data:</h3>
-        {Object.keys(usersData).length > 0 ? (
-          <ul className="list-group">
-            {Object.values(usersData).map((userData, index) => (
-              <li key={index} className="list-group-item">
-                <strong>{userData.username}</strong> placed a bid of ${userData.state?.price || 0}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No auction data received yet.</p>
-        )}
-      </div>
+          {errorMessage && <div className="alert alert-danger mt-3">{errorMessage}</div>}
+
+          {Object.keys(usersData).length > 0 ? (
+  Object.values(usersData).map((userData, index) => (
+    <div key={index} className="col-md-3">
+      <Link>
+        <div className="card info-card sales-card">
+          <div className="card-body">
+            <h5 className="card-title">{userData.username}</h5>
+            <div>
+              <h6>${userData.state?.price || 0}</h6>
+              <span className="text-success small pt-1 fw-bold">
+                {/* Add other relevant details if needed */}
+              </span>
+            </div>
+          </div>
+        </div>
+      </Link>
     </div>
+  ))
+) : (
+  <p>No auction data received yet.</p>
+)}
+
+          </div>
+        </div>
+      </div>
+      ):(
+          <p>No  product received yet.</p>
+
+      )}
+      
+    </div>
+    </>
   );
 };
 
@@ -203,49 +284,49 @@ export default AuctioningPage;
 //   };
 
 //   return (
-//     <div className="container my-4">
-//       <div className="card border-0">
-//         <img
-//           src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`}
-//           className="card-img-top mx-auto mt-3"
-//           alt="Auction Item"
-//         />
-//         <div className="card-body text-center p-0">
-//           <h2 className="my-3">
-//             <span className="me-2">Air Compressor</span>
-//           </h2>
+    // <div className="container my-4">
+    //   <div className="card border-0">
+    //     <img
+    //       src={`${import.meta.env.BASE_URL}/images/graders/grader4.jpg`}
+    //       className="card-img-top mx-auto mt-3"
+    //       alt="Auction Item"
+    //     />
+    //     <div className="card-body text-center p-0">
+    //       <h2 className="my-3">
+    //         <span className="me-2">Air Compressor</span>
+    //       </h2>
 
-//           <div className="row gx-3">
-//             {auctions.map((auction, index) => (
-//               <div key={index} className="col-md-3">
-//                 <Link to={"/auctioning/auction"}>
-//                   <div className="card info-card sales-card">
-//                     <div className="card-body">
-//                       <h5 className="card-title">{auction.location}</h5>
-//                       <div>
-//                         <h6>${auction.price}</h6>
-//                         <span className="text-success small pt-1 fw-bold">
-//                           {auction.discount} off
-//                         </span>
-//                         <p className="text-muted small pt-2 ps-1">
-//                           {auction.seller} {/* Username of last bidder */}
-//                         </p>
-//                       </div>
-//                       <button
-//                         onClick={() => handleBidIncrease(auction.location)}
-//                         className="btn btn-primary"
-//                       >
-//                         Place Bid (+100)
-//                       </button>
-//                     </div>
-//                   </div>
-//                 </Link>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
+    //       <div className="row gx-3">
+    //         {auctions.map((auction, index) => (
+    //           <div key={index} className="col-md-3">
+    //             <Link to={"/auctioning/auction"}>
+    //               <div className="card info-card sales-card">
+    //                 <div className="card-body">
+    //                   <h5 className="card-title">{auction.location}</h5>
+    //                   <div>
+    //                     <h6>${auction.price}</h6>
+    //                     <span className="text-success small pt-1 fw-bold">
+    //                       {auction.discount} off
+    //                     </span>
+    //                     <p className="text-muted small pt-2 ps-1">
+    //                       {auction.seller} {/* Username of last bidder */}
+    //                     </p>
+    //                   </div>
+    //                   <button
+    //                     onClick={() => handleBidIncrease(auction.location)}
+    //                     className="btn btn-primary"
+    //                   >
+    //                     Place Bid (+100)
+    //                   </button>
+    //                 </div>
+    //               </div>
+    //             </Link>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
 //   );
 // };
 
