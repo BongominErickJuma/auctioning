@@ -44,7 +44,7 @@ const SubCategory = () => {
             
             <div className="col-lg-3 rounded mb-4 mb-lg-0" key={category.id}>
               <div className="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-              <Link to={`/auctioning/auction/${category.id }`}>
+              <Link to={`/auctioning/details/${category.id }`}>
 
                 <img
                   src={`${IMAGE_URL}/${category.image}`}  // Use category.image here instead of item.image
