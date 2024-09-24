@@ -11,8 +11,9 @@
   scroll-behavior: smooth;
   --background-color: #f0f8ff;
   --default-color: #333333;
-  --accent-color: #e87511;
-  --accent-color-hover: #ed7112;
+  --accent-color: #1254ff;
+  --accent-color-hover: #054af7;
+  --accent-color-rgba: rgba(5, 74, 247, 0.2);
   --surface-color: #f9f9f9;
   --background-color-deep: #f5f7f8;
   --background-color-deep-hover: #f2f2f2;

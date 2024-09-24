@@ -42,8 +42,8 @@ const Footer = () => {
           <p>Do not sell my personal information</p>
         </div>
         <p className="rights">
-          &copy; 1999 - {new Date().getFullYear()} Ritchie Bros. Auctioneers,
-          lnc. All rights reserved. Various trademarks held by their respective
+          &copy; 1999 - {new Date().getFullYear()} Armstrong. Auctioneers, lnc.
+          All rights reserved. Various trademarks held by their respective
           owners
         </p>
       </div>

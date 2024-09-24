@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Tempo.css";
+// import "./Tempo.css";
 
 const Tempo = () => {
   const [leftItems, setLeftItems] = useState([]);

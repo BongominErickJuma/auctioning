@@ -1,8 +1,8 @@
 const footer = [
   {
-    title: "Ritchie Bros",
+    title: "Armstrong",
     links: [
-      { label: "About Ritchie bros", url: "/about" },
+      { label: "About Armstrong", url: "/about" },
       { label: "Corporate governance", url: "/cg" },
       { label: "investors", url: "/investers" },
       { label: "Careers", url: "/careers" },

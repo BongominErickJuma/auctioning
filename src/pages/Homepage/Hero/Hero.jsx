@@ -83,9 +83,9 @@ const Hero = () => {
                     </div>
                     <div className="flex-r justify-content-between w-100 px-1">
                       <blockquote className="block1 mt-2">
-                        <span className="span-rb">rb</span>RITCHIE BROS.
+                        <span className="span-rb"></span>Armstrong.
                       </blockquote>
-                      <button className="link-btn">rbauction.com/sell</button>
+                      <button className="link-btn">armstrong.com/sell</button>
                     </div>
                   </div>
                 </div>

@@ -53,9 +53,18 @@ const Navbar = () => {
   return (
     <div className="navbar-links shadow default-padding py-4 w-100">
       <div className="topnav flex-r justify-content-between">
-        <Link to="/auctioning">
-          rb
-          <span className="ms-2 text-black fw-bold">RITCHIE BROS.</span>
+        <Link
+          to="/auctioning"
+          className="fw-bold fs-3 font-italic"
+          style={{
+            width: "150px",
+          }}
+        >
+          <img
+            class="d-block w-100"
+            src="https://armstrongug.com/wp-content/uploads/2023/10/Limited-4-e1697370039849.png"
+            alt="Limited (4)"
+          />
         </Link>
         <div className="search-bar w-50">
           <form className="row row-cols-lg-auto g-3 align-items-center w-100">
@@ -63,35 +72,36 @@ const Navbar = () => {
               <div className="input-group w-100">
                 <input
                   type="text"
+                  placeholder="search for vheicles, Auctions"
                   className="form-control"
                   id="inlineFormInputGroupUsername"
                 />
                 <div className="input-group-text">
-                  <i className="bi bi-list fs-6"></i>
+                  <i className="bi bi-filter fs-6"></i>
                 </div>
               </div>
             </div>
           </form>
         </div>
         <div className="buttons">
-          <Link to={"/auctioning/login"} className="btn btn-sm btn-primary">
+          <Link to={"/auctioning/login"} className="btn btn-primary">
             Sign in
           </Link>
           <Link
             to={"/auctioning/signup"}
-            className="btn btn-sm btn-outline-primary ms-2"
+            className="btn btn-outline-primary ms-2"
           >
             Create an account
           </Link>
         </div>
       </div>
       <hr />
-      <div className="flex-r">
+      <div className="flex-r bg-dark ">
         {navbar.map((item, idx) => (
           <Link
             key={idx}
             to={`${item.call ? "#" : item.url}`}
-            className="mx-2 p-1 navbar-item rounded-2 text-center text-dark"
+            className="mx-2 navbar-item rounded-2 text-center text-white p-2"
             data-bs-toggle={item.call ? "modal" : ""}
             data-bs-target="#navModal"
             onClick={() => (item.call ? callItems(item.call) : "")}

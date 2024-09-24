@@ -16,7 +16,7 @@ const Services = () => {
                   className="w-100 d-block"
                 />
               </div>
-              <h1 className="title  p-0 mb-0">RITCHIE BROS.</h1>
+              <h1 className="title  p-0 mb-0">Armstrong.</h1>
               <p className="service-title">{ser.title}</p>
               <p className="mb-5">{ser.text}</p>
               <a href="#" className="float-end my-5">
