@@ -42,7 +42,7 @@ const Items = () => {
             ></button>
           </div>
         </tr>
-      ) : data ? (
+      ): data ? (
         data.results.data.map((item, idx) => (
           <div className="card shadow-sm border-0 mt-3" key={idx}>
             <div className="row">
@@ -69,7 +69,7 @@ const Items = () => {
                             ? "bi bi-phone"
                             : "bi bi-person-walking"
                         }
-                      ></i>
+                       ></i>
                       {item.site}
                     </span>
                     {/* ))} */}
